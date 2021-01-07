@@ -1,0 +1,2 @@
+rootProject.name = "ShareitOpenSDKDemo"
+include ':app'
