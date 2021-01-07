@@ -82,10 +82,10 @@ Android 9.0 (API 28)默认会阻塞明文(非https)流量，这可能会阻止�
 
 一旦你完成了上述步骤，你就可以开始在你的应用程序中显示广告，配置广告单元，如下面的链接所示，为你的广告格式:
 
-- [Banner]()
-- [Interstitial]()
-- [Native]()
-- [Rewarded Video]()
+- [Banner](https://github.com/sunitsdk/ShareitOpenSDKDemo#%E6%BF%80%E5%8A%B1%E8%A7%86%E9%A2%91%E5%B9%BF%E5%91%8A-rewardedvideo)
+- [Native](https://github.com/sunitsdk/ShareitOpenSDKDemo#%E5%8E%9F%E7%94%9F%E5%B9%BF%E5%91%8A-native)
+- [Interstitial](https://github.com/sunitsdk/ShareitOpenSDKDemo#%E6%8F%92%E5%B1%8F%E5%B9%BF%E5%91%8A-interstitial)
+- [Rewarded Video](https://github.com/sunitsdk/ShareitOpenSDKDemo#%E6%BF%80%E5%8A%B1%E8%A7%86%E9%A2%91%E5%B9%BF%E5%91%8A-rewardedvideo)
 
 
 
