@@ -124,7 +124,7 @@ OpenSDK 初始版本
 
 在将横幅广告集成到您的应用之前：
 
-1. 申请对应广告位，并将[SDK集成]()到您的项目中。
+1. 申请对应广告位，并将[SDK集成](https://github.com/sunitsdk/ShareitOpenSDKDemo#%E9%9B%86%E6%88%90)到您的项目中。
 2. 初始化
 
 ### 在您的应用中加载横幅广告
@@ -207,7 +207,7 @@ banner.preload();
 
 在将横幅广告集成到您的应用之前：
 
-1. 申请对应广告位，并将[SDK集成]()到您的项目中。
+1. 申请对应广告位，并将[SDK集成](https://github.com/sunitsdk/ShareitOpenSDKDemo#%E9%9B%86%E6%88%90)到您的项目中。
 2. 初始化
 
 ### 在您的应用中加载原生广告
@@ -392,7 +392,7 @@ shareItNative.preload();
 
 在将插屏广告集成到您的应用之前：
 
-1. 申请对应广告位，并将[SDK集成]()到您的项目中。
+1. 申请对应广告位，并将[SDK集成](https://github.com/sunitsdk/ShareitOpenSDKDemo#%E9%9B%86%E6%88%90)到您的项目中。
 2. 初始化
 
 ### 在您的应用中加载插屏广告
@@ -464,7 +464,7 @@ interstitial.preload();
 
 在将激励视频广告集成到您的应用之前：
 
-1. 申请对应广告位，并将[SDK集成]()到您的项目中。
+1. 申请对应广告位，并将[SDK集成](https://github.com/sunitsdk/ShareitOpenSDKDemo#%E9%9B%86%E6%88%90)到您的项目中。
 2. 初始化
 
 ### 在您的应用中加载激励视频广告
