@@ -32,7 +32,7 @@ android {
 	compileOptions {
 		sourceCompatibility JavaVersion.VERSION_1_8
 		targetCompatibility JavaVersion.VERSION_1_8
-  }
+	}
 }
 ```
 
@@ -87,11 +87,10 @@ Oct 01, 2020 - Android 9.0 (API 28) blocks cleartext (non-HTTPS) traffic by defa
 
 Once you’ve completed the above steps, you can start displaying ads in your application by configuring the ad units as shown in the link below for your ad format:
 
-- [Banner]()
-- [Interstitial]()
-- [Native]()
-- [Rewarded Video]()
-
+- [Banner](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/README.md#banner-ads)
+- [Native](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/README.md#native-ads)
+- [Interstitial](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/README.md#interstitial-ads)
+- [Rewarded Video](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/README.md#rewarded-video-ads)
 
 
 ## Initialize
@@ -129,8 +128,8 @@ Banner ads usually appear at the top or bottom of your app’s screen. Adding on
 
 Before integrating banner ads in your app:
 
-1. create an account, create an [app](), and create an [ad unit]() using the format ‘Banner’.
-2. Follow our steps to [integrate the SHAREit Open SDK]() into your project.
+1. create an account, create an **App**, and create an **Ad unit** using the format ‘Banner’.
+2. Follow our steps to [integrate the SHAREit Open SDK](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/README.md#integrate-the-shareit-open-sdk-for-android) into your project.
 3. Integrated the Shareit Ad open SDK
 
 ### Loading Banner Ads in Your App
@@ -217,8 +216,8 @@ Native ads let you monetize your app in a way that’s consistent with its exist
 
 Before integrating native ads into your app:
 
-1. create an account, create an [app](), and create an [ad unit]() using the format ‘Native’.
-2. Follow our steps to [integrate the SHAREit Open SDK]() into your project.
+1. create an account, create an **App**, and create an **Ad unit** using the format ‘Native’.
+2. Follow our steps to [integrate the SHAREit Open SDK](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/README.md#integrate-the-shareit-open-sdk-for-android) into your project.
 3. Integrated the Shareit Ad open SDK
 
 ####  Step 1. Request the Native Ad
@@ -406,8 +405,8 @@ Interstitial ads provide full-screen experiences, commonly incorporating rich me
 
 ###  Prerequisites
 
-1. create an account, create an [app](), and create an [ad unit]() using the format ‘Interstitial’.
-2. Follow our steps to [integrate the SHAREit Open SDK]() into your project.
+1. create an account, create an **App**, and create an **Ad unit** using the format ‘Interstitial’.
+2. Follow our steps to [integrate the SHAREit Open SDK](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/README.md#integrate-the-shareit-open-sdk-for-android) into your project.
 3. Integrated the Shareit Ad open SDK
 
 ### Load Interstitial Ads in Your App
@@ -483,8 +482,8 @@ Rewarded video ads are a great way to keep users engaged in your app while earni
 
 ###  Prerequisites
 
-1. create an account, create an [app](), and create an [ad unit]() using the format ‘Rewarded Video’.
-2. Follow our steps to [integrate the SHAREit Open SDK]() into your project.
+1. create an account, create an **App**, and create an **Ad unit** using the format ‘Rewarded Video’.
+2. Follow our steps to [integrate the SHAREit Open SDK](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/README.md#integrate-the-shareit-open-sdk-for-android) into your project.
 3. Integrated the Shareit Ad open SDK
 
 ### Basic Integration
