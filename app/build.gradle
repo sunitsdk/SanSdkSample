@@ -47,10 +47,10 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
 
 
-    //shareit open sdk
-    api "com.sunit:shareit-ad-open:3.0.0.0"
+    //Shareit open sdk
+    api "com.sunit:shareit-ad-open:3.0.0.+"
 
-    //mediation adapter(可选)
+    //Mediation adapter(optional)
     implementation "com.sunit.mediation:admob:$VERSION_ADMOB_AD_MEDIATION"
     implementation "com.sunit.mediation:facebook:$VERSION_FACEBOOK_AD_MEDIATION"
     implementation "com.sunit.mediation:mopub:$VERSION_MOPUB_AD_MEDIATION"

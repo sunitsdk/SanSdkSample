@@ -21,7 +21,7 @@ repositories {
 
 dependencies {
     // ... other project dependencies
-    api "com.sunit:shareit-ad-open:3.0.0.0"// shareit open sdk
+    api "com.sunit:shareit-ad-open:3.0.0.+"// shareit open sdk
 }
 ```
 
