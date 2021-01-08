@@ -22,13 +22,8 @@ public class RewardedFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_rewarded, container, false);
         final Button button = root.findViewById(R.id.btn_rewarded_ad);
-        button.setText("Rewarded Ad: " + REWARDED_UNIT_ID);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                loadAndShowRewardedAd();
-            }
-        });
+        button.setText(String.format("Rewarded Ad: %s", REWARDED_UNIT_ID));
+        button.setOnClickListener(view -> loadAndShowRewardedAd());
         return root;
     }
 

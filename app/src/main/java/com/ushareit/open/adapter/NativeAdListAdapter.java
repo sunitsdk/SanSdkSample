@@ -88,12 +88,9 @@ public class NativeAdListAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     private void setItemClickListener(@NonNull final RecyclerView.ViewHolder viewHolder, final int position) {
-        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mOnItemClickListener != null)
-                    mOnItemClickListener.onItemClick(position - getHeadViewCount());
-            }
+        viewHolder.itemView.setOnClickListener(v -> {
+            if (mOnItemClickListener != null)
+                mOnItemClickListener.onItemClick(position - getHeadViewCount());
         });
     }
 

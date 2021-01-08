@@ -22,12 +22,12 @@
         android:id="@+id/native_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
+        android:layout_toEndOf="@+id/native_icon_image"
+        android:layout_toRightOf="@+id/native_icon_image"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
         android:layout_marginTop="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:textColor="@android:color/darker_gray"
         android:textStyle="bold" />
 
@@ -68,13 +68,16 @@
         android:background="@drawable/ads_button_bg"
         android:clickable="true"
         android:focusable="true"
+        android:singleLine="true"
         android:textColor="@color/white"
         android:textStyle="bold" />
 
     <FrameLayout
-        android:id="@+id/ad_choise"
+        android:id="@+id/ad_choices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"/>
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true" />
 
 </RelativeLayout>

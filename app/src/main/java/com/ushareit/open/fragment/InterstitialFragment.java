@@ -22,13 +22,8 @@ public class InterstitialFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_interstitial, container, false);
         final Button button = root.findViewById(R.id.btn_interstitial_ad);
-        button.setText("Interstitial Ad: " + INTERSTITIAL_UNIT_ID);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                loadAndShowInterstitialAd();
-            }
-        });
+        button.setText(String.format("Interstitial Ad: %s", INTERSTITIAL_UNIT_ID));
+        button.setOnClickListener(view -> loadAndShowInterstitialAd());
         return root;
     }
 

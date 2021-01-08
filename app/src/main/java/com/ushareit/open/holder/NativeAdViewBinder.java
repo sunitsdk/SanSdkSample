@@ -1,4 +1,4 @@
-package com.ushareit.open.fragment;
+package com.ushareit.open.holder;
 
 import android.content.Context;
 import android.view.View;
@@ -29,8 +29,6 @@ public class NativeAdViewBinder {
     private final int callToActionId;
     private final int mainImageId;
     private final int iconImageId;
-    private final int privacyInformationIconImageId;
-    private final int sponsoredTextId;
     @NonNull
     final Map<String, Integer> extras;
 
@@ -41,8 +39,6 @@ public class NativeAdViewBinder {
         this.callToActionId = builder.callToActionId;
         this.mainImageId = builder.mainImageId;
         this.iconImageId = builder.iconImageId;
-        this.privacyInformationIconImageId = builder.privacyInformationIconImageId;
-        this.sponsoredTextId = builder.sponsoredTextId;
         this.extras = builder.extras;
     }
 
@@ -130,8 +126,6 @@ public class NativeAdViewBinder {
         private int callToActionId;
         private int mainImageId;
         private int iconImageId;
-        private int privacyInformationIconImageId;
-        private int sponsoredTextId;
 
         @NonNull
         private Map<String, Integer> extras;
@@ -168,18 +162,6 @@ public class NativeAdViewBinder {
         @NonNull
         public final NativeAdViewBinder.Builder iconImageId(final int iconImageId) {
             this.iconImageId = iconImageId;
-            return this;
-        }
-
-        @NonNull
-        public final NativeAdViewBinder.Builder privacyInformationIconImageId(final int privacyInformationIconImageId) {
-            this.privacyInformationIconImageId = privacyInformationIconImageId;
-            return this;
-        }
-
-        @NonNull
-        public final NativeAdViewBinder.Builder sponsoredTextId(final int sponsoredTextId) {
-            this.sponsoredTextId = sponsoredTextId;
             return this;
         }
 

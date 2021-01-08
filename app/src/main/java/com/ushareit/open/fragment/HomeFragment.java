@@ -18,6 +18,7 @@ import com.ushareit.ads.ShareItNative;
 import com.ushareit.ads.base.AdException;
 import com.ushareit.open.R;
 import com.ushareit.open.adapter.NativeAdListAdapter;
+import com.ushareit.open.holder.NativeAdViewBinder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,7 +72,7 @@ public class HomeFragment extends Fragment {
                                 .titleId(R.id.native_title)
                                 .textId(R.id.native_text)
                                 .callToActionId(R.id.native_cta)
-                                .addExtra(AD_CHOICES_VIEW, R.id.ad_choise)
+                                .addExtra(AD_CHOICES_VIEW, R.id.ad_choices)
                                 .build();
                 View adView = midasAdRenderer.createAdView(HomeFragment.this.getContext(), nativeAd, null);
                 if (adView == null) return;

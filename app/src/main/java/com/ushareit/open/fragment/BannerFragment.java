@@ -26,24 +26,14 @@ public class BannerFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_banner, container, false);
         final Button banner50 = root.findViewById(R.id.btn_banner_ad);
-        banner50.setText("Banner320x50: " + BANNER_UNIT_ID_320x50);
+        banner50.setText(String.format("Banner320x50: %s", BANNER_UNIT_ID_320x50));
         mBannerContainer = root.findViewById(R.id.banner_container);
-        banner50.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                loadAndShowBannerAd(ShareItBannerView.AdSize.HEIGHT_50, BANNER_UNIT_ID_320x50);
-            }
-        });
+        banner50.setOnClickListener(view -> loadAndShowBannerAd(ShareItBannerView.AdSize.HEIGHT_50, BANNER_UNIT_ID_320x50));
 
 
         final Button banner250 = root.findViewById(R.id.btn_banner_ad2);
-        banner250.setText("Banner300x250: " + BANNER_UNIT_ID_300x250);
-        banner250.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                loadAndShowBannerAd(ShareItBannerView.AdSize.HEIGHT_250, BANNER_UNIT_ID_300x250);
-            }
-        });
+        banner250.setText(String.format("Banner300x250: %s", BANNER_UNIT_ID_300x250));
+        banner250.setOnClickListener(view -> loadAndShowBannerAd(ShareItBannerView.AdSize.HEIGHT_250, BANNER_UNIT_ID_300x250));
         return root;
     }
 
