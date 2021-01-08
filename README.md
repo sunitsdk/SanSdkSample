@@ -14,14 +14,14 @@ The Shareit Open SDK is available as an AAR via Bintray.To add the shareit-ad-op
 
 ```
 repositories {
-	// ... other project repositories
-	maven {url "https://dl.bintray.com/sunitsdk/SUnit"}// shareit open sdk
+    // ... other project repositories
+    maven {url "https://dl.bintray.com/sunitsdk/SUnit"}// shareit open sdk
 }
 //...
 
 dependencies {
     // ... other project dependencies
-		api "com.sunit:shareit-ad-open:3.0.0.0"// shareit open sdk
+    api "com.sunit:shareit-ad-open:3.0.0.0"// shareit open sdk
 }
 ```
 
@@ -29,10 +29,10 @@ To support Java 8, add the language feature support:
 
 ```
 android {
-	compileOptions {
-		sourceCompatibility JavaVersion.VERSION_1_8
-		targetCompatibility JavaVersion.VERSION_1_8
-	}
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 ```
 
@@ -175,25 +175,25 @@ banner.destory();
 banner.setBannerAdListener(new ShareItBannerView.BannerAdListener() {
     @Override
     public void onBannerLoaded(@NonNull ShareItBannerView shareItBannerView) {
-    		//the banner has successfully retrieved an ad.
+    	//the banner has successfully retrieved an ad.
         Log.d(TAG,"onBannerLoaded");
     }
 
     @Override
     public void onBannerFailed(ShareItBannerView shareItBannerView, AdException e) {
-    		//the banner has failed to retrieve an ad.
+    	//the banner has failed to retrieve an ad.
         Log.d(TAG,"onBannerFailed exception = " + e.getMessage());
     }
 
     @Override
     public void onBannerClicked(ShareItBannerView shareItBannerView) {
-    		//the user has tapped on the banner.
+    	//the user has tapped on the banner.
         Log.d(TAG,"onBannerClicked");
     }
 
     @Override
     public void onBannerImpression(ShareItBannerView shareItBannerView) {
-    		//the banner has showed
+    	//the banner has showed
         Log.d(TAG,"onBannerImpression");
     }
 });
@@ -244,7 +244,7 @@ ShareItNative shareItNative = new ShareItNative(getContext(), adUnitId, new Shar
 
     @Override
     public void onClick(BaseNativeAd baseNativeAd) {
-     		// Called when a ad is clicked
+     	// Called when a ad is clicked
         Log.d(TAG, "onClick");
     }
 });
@@ -349,7 +349,7 @@ The Sample:
 - Method 1: Get ShareItNativeAd to show
 
 ```
-  BaseNativeAd nativeAd;//The BaseNativeAd is obtained from onNativeLoaded（）
+  BaseNativeAd nativeAd;//The BaseNativeAd is obtained from onNativeLoaded()
   ShareItNativeAd midasAd = (ShareItNativeAd) nativeAd;
   com.ushareit.ads.MediaView mediaView = findViewById(R.id.native_main_image);
   TextView title = findViewById(R.id.native_title);
@@ -371,7 +371,7 @@ The Sample:
 - Method 2: Use the Renderer
 
 ```
-  BaseNativeAd nativeAd;//The BaseNativeAd is obtained from onNativeLoaded（）
+  BaseNativeAd nativeAd;//The BaseNativeAd is obtained from onNativeLoaded()
   ShareItNativeAd midasAd = (ShareItNativeAd) nativeAd;
   SUnitNativeAdRenderer midasAdRenderer = new SUnitNativeAdRenderer(
           new SUnitNativeAdRenderer.SUnitViewBinder.Builder(R.layout.ad_item_layout)
@@ -418,19 +418,19 @@ ShareItInterstitial interstitial = new ShareItInterstitial(getContext(), INTERST
 interstitial.setInterstitialAdListener(new ShareItInterstitial.InterstitialAdListener() {
             @Override
             public void onInterstitialLoaded(final ShareItInterstitial shareItInterstitial) {
-            		// The interstitial has been cached and is ready to be shown.
+            	// The interstitial has been cached and is ready to be shown.
                 Log.d(TAG, "onInterstitialLoaded");
             }
 
             @Override
             public void onInterstitialFailed(ShareItInterstitial shareItInterstitial, AdException e) {
-            		// The interstitial has failed to load.
+            	// The interstitial has failed to load.
                 Log.d(TAG,"onInterstitialFailed e = " + e.getMessage());
             }
 
             @Override
             public void onInterstitialShown(ShareItInterstitial shareItInterstitial) {
-            		// The interstitial has been shown. 
+            	// The interstitial has been shown. 
                 Log.d(TAG,"onInterstitialShown");
             }
 
