@@ -340,7 +340,7 @@ The Sample:
 </RelativeLayout>
 ```
 
-![](https://tva1.sinaimg.cn/large/008eGmZEgy1gmgczlwc9nj30ex0i975z.jpg)
+![NateAdSmple](https://tva1.sinaimg.cn/large/008eGmZEgy1gmgczlwc9nj30ex0i975z.jpg)
 
 
 
@@ -495,37 +495,37 @@ ShareItRewardedAd rewardedAd = new ShareItRewardedAd(getContext(), REWARDED_UNIT
 rewardedAd.setRewardedAdListener(new ShareItRewardedAd.RewardedVideoAdListener() {
     @Override
     public void onRewardedAdLoaded(final ShareItRewardedAd shareItRewardedAd) {
-    		// Called when the video for the given adUnitId has loaded.
+    	// Called when the video for the given adUnitId has loaded.
         Log.d(TAG, "onRewardedAdLoaded");
     }
 
     @Override
     public void onRewardedAdFailed(ShareItRewardedAd shareItRewardedAd, AdException e) {
-    		// Called when a video fails to load for the given adUnitId. 
+    	// Called when a video fails to load for the given adUnitId. 
         Log.d(TAG, "onRewardedAdFailed e = " + e.getMessage());
     }
 
     @Override
     public void onRewardedAdShown(ShareItRewardedAd shareItRewardedAd) {
-    		// Called when a rewarded video starts playing.
+    	// Called when a rewarded video starts playing.
         Log.d(TAG, "onRewardedAdShown");
     }
 
     @Override
     public void onRewardedAdClicked(ShareItRewardedAd shareItRewardedAd) {
-    		//  Called when a rewarded video is clicked.
+    	//  Called when a rewarded video is clicked.
         Log.d(TAG, "onRewardedAdClicked");
     }
 
     @Override
     public void onRewardedVideoClosed(ShareItRewardedAd shareItRewardedAd) {
-   		  // Called when a rewarded video is closed.
+   	// Called when a rewarded video is closed.
         Log.d(TAG, "onRewardedVideoClosed");
     }
 
     @Override
     public void onRewardedVideoCompleted(ShareItRewardedAd shareItRewardedAd) {
-    		// Called when a rewarded video is completed and the user should be rewarded.
+    	// Called when a rewarded video is completed and the user should be rewarded.
         Log.d(TAG, "onRewardedVideoCompleted");
     }
 });
