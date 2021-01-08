@@ -153,7 +153,7 @@ Next, in your `Activity` or `Fragment` code, declare an instance variable for yo
 private ShareItBannerView banner;
 ```
 
-You should already have created an ad unit on MoPub’s site and received an Ad Unit ID. You’ll use it now to identify that ad unit in your app and request ads from MoPub that are relevant for your users.
+You should already have created an ad unit on Midas’s site and received an Ad Unit ID. You’ll use it now to identify that ad unit in your app and request ads from Midas that are relevant for your users.
 
 In your Activity’s `onCreate()` or your Fragment’s `onCreateView()` method, set your `ShareitBannerView` Ad Unit ID, then simply call `loadAd()` to fetch and display the ad:
 
