@@ -267,11 +267,11 @@ The Sample:
         android:id="@+id/native_icon_image"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:background="@null"
         android:contentDescription="@null" />
@@ -280,12 +280,12 @@ The Sample:
         android:id="@+id/native_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_toEndOf="@+id/native_icon_image"
+        android:layout_toRightOf="@+id/native_icon_image"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="84dp"
-        android:layout_marginStart="84dp"
         android:layout_marginTop="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:textColor="@android:color/darker_gray"
         android:textStyle="bold" />
 
@@ -293,11 +293,11 @@ The Sample:
         android:id="@+id/native_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/native_icon_image"
-        android:layout_marginLeft="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:textColor="@android:color/darker_gray" />
 
@@ -305,12 +305,12 @@ The Sample:
         android:id="@+id/native_main_image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/native_text"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
         android:background="@null"
         android:scaleType="centerCrop" />
 
@@ -320,24 +320,26 @@ The Sample:
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
         android:background="@drawable/ads_button_bg"
-        android:textColor="@color/white"
         android:clickable="true"
         android:focusable="true"
+        android:singleLine="true"
+        android:textColor="@color/white"
         android:textStyle="bold" />
 
     <FrameLayout
-        android:id="@+id/ad_choise"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:id="@+id/ad_choices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"/>
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true" />
 
 </RelativeLayout>
+
 ```
 
 ![NateAdSample](https://tva1.sinaimg.cn/large/008eGmZEgy1gmgczlwc9nj30ex0i975z.jpg)
