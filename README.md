@@ -1,31 +1,46 @@
-# SHAREit-OpenSDK接入文档
+# SHAREit Open SDK document
 
-## 集成
+## Get Started with SHAREit Open SDK
 
-### 步骤 1.引入sdk
+Welcome to SHAREit Ad! This navigation will provide the comprehensive guidelines including the SDK integration document, Midas platform's configuration guides, advanced features and classic monetization cases, which will navigate you to use SHAREit Open Mediation quickly and maximize your monetization.
 
-在相应buidl.gradle中引用SHAREit-OpenSDK 库
+Aggregate twelve mainstream online advertising platforms including AdColony, Admob, AppLovin, Facebook, Fyber, InMobi, Ironsource, Mintegral, Mopub, TopOn, UnityAds, Vungle with native, banner , interstitial and rewarded video Ad available.
+
+## Integrate the SHAREit Open SDK for Android
+
+### Step 1. Download the SHAREit Ad Android SDK
+
+The Shareit Open SDK is available as an AAR via Bintray.To add the shareit-ad-open sdk dependency, open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
 ```
-api "com.sunit:shareit-ad-open:3.0.0.0"
-```
+repositories {
+	// ... other project repositories
+	maven {url "https://dl.bintray.com/sunitsdk/SUnit"}// shareit open sdk
+}
+//...
 
-在工程根目录下的build.gradle中增加远程库地址
-
-```
-allprojects {
-    repositories {
-        // shareit open sdk
-        maven {
-            url "https://dl.bintray.com/sunitsdk/SUnit"
-        }
-    }
+dependencies {
+    // ... other project dependencies
+		api "com.sunit:shareit-ad-open:3.0.0.0"// shareit open sdk
 }
 ```
 
-### 步骤 2.增加相关权限
+To support Java 8, add the language feature support:
 
-声明以下权限:
+```
+android {
+	compileOptions {
+		sourceCompatibility JavaVersion.VERSION_1_8
+		targetCompatibility JavaVersion.VERSION_1_8
+  }
+}
+```
+
+### Step 2.Update Your Android Manifest
+
+Upate your AndroidManifest.xml in order to complete the SDK integration. Add the following permissions and activity declarations according to the bundle you are integrating.
+
+1. Declare the following permissions:
 
 ```
 <!-- Required permissions -->
@@ -37,11 +52,11 @@ allprojects {
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 ```
 
-### 步骤 3：添加网络安全配置文件
+### Step 3：Add network_security_config.xml
 
-Android 9.0 (API 28)默认会阻塞明文(非https)流量，这可能会阻止广告正确服务。为了缓解这一问题，在Android 9.0或以上版本上运行应用的发行商应该确保添加一个网络安全配置文件。这样做允许列表清除文本流量，并允许非https广告服务。
+Oct 01, 2020 - Android 9.0 (API 28) blocks cleartext (non-HTTPS) traffic by default, which can prevent ads from serving correctly. To mitigate that, publishers whose apps run on Android 9.0 or above should ensure to add a network security config file. Doing so allowlists cleartext traffic and allows non-HTTPS ads to serve.
 
-1. 在您App的 AndroidManifest.xml 中增加如下:
+1. In your AndroidManifest.xml file, add the following:
 
    ```
     <manifest>
@@ -53,7 +68,7 @@ Android 9.0 (API 28)默认会阻塞明文(非https)流量，这可能会阻止�
     </manifest>
    ```
 
-2. 在 `network_security_config.xml` 文件中, 增加 `base-config` 并设置 `cleartextTrafficPermitted=true`:
+2. In your `network_security_config.xml` file, add a `base-config` that sets `cleartextTrafficPermitted` to `true`:
 
    ```
     <?xml version="1.0" encoding="utf-8"?>
@@ -64,36 +79,26 @@ Android 9.0 (API 28)默认会阻塞明文(非https)流量，这可能会阻止�
                 <certificates src="system"/>
             </trust-anchors>
         </base-config>
-        <domain-config cleartextTrafficPermitted="false">
-            <domain includeSubdomains="true">example.com</domain>
-            <domain includeSubdomains="true">cdn.example2.com</domain>
-        </domain-config>
         ...
     </network-security-config>
    ```
 
-**注意:**当' base-config '允许HTTP通信时，为了保护某些域，添加' domain-config '确保某些域将始终使用HTTPS。
+### Step 4. Configure Ad Units in Your App
 
-### 步骤 4. 在你的应用中配置广告单元
+Once you’ve completed the above steps, you can start displaying ads in your application by configuring the ad units as shown in the link below for your ad format:
 
-在后台申请相关AppKey及广告单元ID。
-
-
-
-一旦你完成了上述步骤，你就可以开始在你的应用程序中显示广告，配置广告单元，如下面的链接所示，为你的广告格式:
-
-- [Banner](https://github.com/sunitsdk/ShareitOpenSDKDemo#%E6%A8%AA%E5%B9%85%E5%B9%BF%E5%91%8A-banner)
-- [Native](https://github.com/sunitsdk/ShareitOpenSDKDemo#%E5%8E%9F%E7%94%9F%E5%B9%BF%E5%91%8A-native)
-- [Interstitial](https://github.com/sunitsdk/ShareitOpenSDKDemo#%E6%8F%92%E5%B1%8F%E5%B9%BF%E5%91%8A-interstitial)
-- [Rewarded Video](https://github.com/sunitsdk/ShareitOpenSDKDemo#%E6%BF%80%E5%8A%B1%E8%A7%86%E9%A2%91%E5%B9%BF%E5%91%8A-rewardedvideo)
+- [Banner]()
+- [Interstitial]()
+- [Native]()
+- [Rewarded Video]()
 
 
 
-## 初始化
+## Initialize
 
-在集成了SHAREit OPEN SDK并创建了广告单元之后，必须在发送任何广告请求之前调用ShareItAd.init();进行初始化
+After you have integrated the Shareit Ad open SDK and created an ad unit, you must call `ShareItAd.init()` **before you send any ad requests**. Initialization is **required** for a number of new functionalities:
 
-推荐在Application中进行初始化，如下
+It is recommended to initialize in `Application onCreate()`
 
 ```
 public class MyApplication extends MultiDexApplication {
@@ -108,48 +113,49 @@ public class MyApplication extends MultiDexApplication {
 
 
 
-## 版本改动
+## Changelog
 
-### 3.0.0.0 
+### 3.0.0.0 (January 8,2021)
 
-OpenSDK 初始版本
+- OpenSDK initial release
 
 
 
-## 横幅广告 Banner
+## Banner Ads
 
-横幅广告通常显示在应用程序屏幕的顶部或底部。将其添加到您的应用只需几行代码。
+Banner ads usually appear at the top or bottom of your app’s screen. Adding one to your app takes just a few lines of code.
 
-###  先决条件
+###  Prerequisites
 
-在将横幅广告集成到您的应用之前：
+Before integrating banner ads in your app:
 
-1. 申请对应广告位，并将[SDK集成](https://github.com/sunitsdk/ShareitOpenSDKDemo#%E9%9B%86%E6%88%90)到您的项目中。
-2. 初始化
+1. create an account, create an [app](), and create an [ad unit]() using the format ‘Banner’.
+2. Follow our steps to [integrate the SHAREit Open SDK]() into your project.
+3. Integrated the Shareit Ad open SDK
 
-### 在您的应用中加载横幅广告
+### Loading Banner Ads in Your App
 
-#### 步骤1.在XML布局中为横幅广告定义一个广告位
+#### Step 1.Define a Slot for Your Banner Ad in Your XML Layout
 
-首先将此XML块包含到您`Activity`的或`Fragment`布局中。我们稍后将填写详细信息：
+Start by including this XML block to your `Activity`’s or `Fragment`’s layout. We will fill in the details later:
 
 ```
 <com.ushareit.ads.ShareItBannerView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>
+    android:layout_width=""
+    android:layout_height=""/>
 ```
 
-#### 步骤2.将广告加载到横幅广告位
+#### Step 2. Load an Ad Into the Banner Slot
 
-接下来，在您的`Activity`或`Fragment`代码中，声明一个实例变量`ShareItBannerView`：
+Next, in your `Activity` or `Fragment` code, declare an instance variable for your `ShareItBannerView`：
 
 ```
 private ShareItBannerView banner;
 ```
 
-您应该已经在SHAREit Ad的网站上创建了一个广告单元，并收到了一个广告单元ID。现在，您将使用它来识别应用中的广告单元，并从SHAREit AD请求与您的用户相关的广告。
+You should already have created an ad unit on MoPub’s site and received an Ad Unit ID. You’ll use it now to identify that ad unit in your app and request ads from MoPub that are relevant for your users.
 
-在“Activity”`onCreate()`或“Fragment”的`onCreateView()`方法中，设置您`ShareitBannerView`的广告单元ID，然后只需调用`loadAd()`即可获取并显示广告：
+In your Activity’s `onCreate()` or your Fragment’s `onCreateView()` method, set your `ShareitBannerView` Ad Unit ID, then simply call `loadAd()` to fetch and display the ad:
 
 ```
 banner = (ShareItBannerView)findViewById(R.id.adview);
@@ -158,90 +164,97 @@ banner.setAdSize(adSize);
 banner.loadAd();
 ```
 
-#### 监听器
-
-```
-banner.setBannerAdListener(new ShareItBannerView.BannerAdListener() {
-    @Override
-    public void onBannerLoaded(@NonNull ShareItBannerView shareItBannerView) {
-        Log.d(TAG,"onBannerLoaded");//加载成功
-    }
-
-    @Override
-    public void onBannerFailed(ShareItBannerView shareItBannerView, AdException e) {
-        Log.d(TAG,"onBannerFailed exception = " + e.getMessage());//加载失败
-    }
-
-    @Override
-    public void onBannerClicked(ShareItBannerView shareItBannerView) {
-        Log.d(TAG,"onBannerClicked");//广告点击
-    }
-
-    @Override
-    public void onBannerImpression(ShareItBannerView shareItBannerView) {
-        Log.d(TAG,"onBannerImpression");//广告展示
-    }
-});
-```
-
-#### 销毁
+When the hosting `Activity` or `Fragment` is destroyed, be sure to also destroy the `MoPubView` by calling:
 
 ```
 banner.destory();
 ```
 
-#### 预加载
+###  Using the Delegate
 
-使用preload方法进行提前预加载，可以减少在展示时机时load的时长
+```
+banner.setBannerAdListener(new ShareItBannerView.BannerAdListener() {
+    @Override
+    public void onBannerLoaded(@NonNull ShareItBannerView shareItBannerView) {
+    		//the banner has successfully retrieved an ad.
+        Log.d(TAG,"onBannerLoaded");
+    }
+
+    @Override
+    public void onBannerFailed(ShareItBannerView shareItBannerView, AdException e) {
+    		//the banner has failed to retrieve an ad.
+        Log.d(TAG,"onBannerFailed exception = " + e.getMessage());
+    }
+
+    @Override
+    public void onBannerClicked(ShareItBannerView shareItBannerView) {
+    		//the user has tapped on the banner.
+        Log.d(TAG,"onBannerClicked");
+    }
+
+    @Override
+    public void onBannerImpression(ShareItBannerView shareItBannerView) {
+    		//the banner has showed
+        Log.d(TAG,"onBannerImpression");
+    }
+});
+```
+
+### Ad Preload
+
+Using the `preload()` to preload in advance reduces the load time at presentation time
 
 ```
 banner.preload();
 ```
 
 
-## 原生广告 Native
+## Native Ads
 
-原生广告让你能够以与现有设计保持一致的方式盈利。这样你就可以设计与应用外观和感觉一致的广告布局。SDK自动处理图像缓存和参数跟踪，这样你就可以专注于如何、何时和何处显示广告。
+Native ads let you monetize your app in a way that’s consistent with its existing design.  You can design the ad layout to be consistent with the look and feel of your app. The SDK automatically handles image caching and metrics tracking so you can focus on how, when, and where to display ads.
 
-### 先决条件
+### Prerequisites
 
-在将横幅广告集成到您的应用之前：
+Before integrating native ads into your app:
 
-1. 申请对应广告位，并将[SDK集成](https://github.com/sunitsdk/ShareitOpenSDKDemo#%E9%9B%86%E6%88%90)到您的项目中。
-2. 初始化
+1. create an account, create an [app](), and create an [ad unit]() using the format ‘Native’.
+2. Follow our steps to [integrate the SHAREit Open SDK]() into your project.
+3. Integrated the Shareit Ad open SDK
 
-### 在您的应用中加载原生广告
-
-#### 步骤1：请求原生广告
+####  Step 1. Request the Native Ad
 
 ```
 ShareItNative shareItNative = new ShareItNative(getContext(), adUnitId, new ShareItNative.NativeNetworkListener() {
     @Override
     public void onNativeLoaded(BaseNativeAd nativeAd) {
-        Log.d(TAG, "onNativeLoaded");//加载成功
+        // Called when the ad for the given adUnitId has loaded.
+        Log.d(TAG, "onNativeLoaded");
     }
 
     @Override
-    public void onNativeFailed(AdException e) {//加载失败
+    public void onNativeFailed(AdException e) {
+        // Called when a ad fails to load for the given adUnitId. 
         Log.d(TAG, "onNativeFailed e = " + e.getMessage() + " code = " + e.getCode());
     }
 
     @Override
     public void onImpression(BaseNativeAd baseNativeAd) {
-        Log.d(TAG, "onImpression");//广告被展示
+        // Called when a ad shown
+        Log.d(TAG, "onImpression");
     }
 
     @Override
     public void onClick(BaseNativeAd baseNativeAd) {
-        Log.d(TAG, "onClick");//广告被点击
+     		// Called when a ad is clicked
+        Log.d(TAG, "onClick");
     }
 });
-shareItNative.loadAd();//发起广告请求
+shareItNative.loadAd();//Request ad
 ```
 
-#### 步骤2：创建原生广告布局
+#### Step 2：Create an XML layout
 
-布局文件示例：
+The Sample:
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -328,13 +341,16 @@ shareItNative.loadAd();//发起广告请求
 </RelativeLayout>
 ```
 
-![1111](https://tva1.sinaimg.cn/large/0081Kckwly1gkqw1r0346j30u50qcteb.jpg)
+![](https://tva1.sinaimg.cn/large/008eGmZEgy1gmgczlwc9nj30ex0i975z.jpg)
 
-#### 步骤3：展示原生广告
 
-- 解析实体展示方式
 
-  ```
+#### Step 3：Show Native Ads
+
+- Method 1: Get ShareItNativeAd to show
+
+```
+  BaseNativeAd nativeAd;//The BaseNativeAd is obtained from onNativeLoaded（）
   ShareItNativeAd midasAd = (ShareItNativeAd) nativeAd;
   com.ushareit.ads.MediaView mediaView = findViewById(R.id.native_main_image);
   TextView title = findViewById(R.id.native_title);
@@ -351,13 +367,13 @@ shareItNative.loadAd();//发起广告请求
   clickViews.add(iconView);
   clickViews.add(button);
   midasAd.registerViewForInteraction(adView, mediaView, clickViews);
-  ```
+```
 
-- 使用Renderer方式
+- Method 2: Use the Renderer
 
 ```
+  BaseNativeAd nativeAd;//The BaseNativeAd is obtained from onNativeLoaded（）
   ShareItNativeAd midasAd = (ShareItNativeAd) nativeAd;
-  
   SUnitNativeAdRenderer midasAdRenderer = new SUnitNativeAdRenderer(
           new SUnitNativeAdRenderer.SUnitViewBinder.Builder(R.layout.ad_item_layout)
                   .iconImageId(R.id.native_icon_image)
@@ -374,9 +390,9 @@ shareItNative.loadAd();//发起广告请求
   mAdContainer.addView(adView);
 ```
 
-#### 预加载
+### Ad Preload
 
-使用preload方法进行提前预加载，可以减少在展示时机时load的时长
+Using the `preload()` to preload in advance reduces the load time at presentation time
 
 ```
 shareItNative.preload();
@@ -384,71 +400,76 @@ shareItNative.preload();
 
 
 
-## 插屏广告 Interstitial
+## Interstitial Ads
 
-插页广告提供全屏体验，与条幅广告相比，插页广告通常会结合富媒体提供更高层次的交互性。例如，在完成游戏关卡后，或等待加载新视图时。使用ShareItInterstitial对象及其相关的监听器来获取和显示应用程序中的插播广告。
+Interstitial ads provide full-screen experiences, commonly incorporating rich media to offer a higher level of interactivity compared to banner ads. Interstitials are typically shown during natural transitions in your app; for example, after completing a game level, or while waiting for a new view to load. Use the `ShareItInterstitial` object and its associated listeners to fetch and display interstitial ads in your app.
 
-###  先决条件
+###  Prerequisites
 
-在将插屏广告集成到您的应用之前：
+1. create an account, create an [app](), and create an [ad unit]() using the format ‘Interstitial’.
+2. Follow our steps to [integrate the SHAREit Open SDK]() into your project.
+3. Integrated the Shareit Ad open SDK
 
-1. 申请对应广告位，并将[SDK集成](https://github.com/sunitsdk/ShareitOpenSDKDemo#%E9%9B%86%E6%88%90)到您的项目中。
-2. 初始化
+### Load Interstitial Ads in Your App
 
-### 在您的应用中加载插屏广告
-
-#### 步骤1：请求
+#### Step 1. Create an Interstitial Ad
 
 ```
 ShareItInterstitial interstitial = new ShareItInterstitial(getContext(), INTERSTITIAL_UNIT_ID);
 interstitial.setInterstitialAdListener(new ShareItInterstitial.InterstitialAdListener() {
             @Override
             public void onInterstitialLoaded(final ShareItInterstitial shareItInterstitial) {
-                Log.d(TAG, "onInterstitialLoaded");//加载成功
+            		// The interstitial has been cached and is ready to be shown.
+                Log.d(TAG, "onInterstitialLoaded");
             }
 
             @Override
             public void onInterstitialFailed(ShareItInterstitial shareItInterstitial, AdException e) {
-                Log.d(TAG,"onInterstitialFailed e = " + e.getMessage());//加载失败
+            		// The interstitial has failed to load.
+                Log.d(TAG,"onInterstitialFailed e = " + e.getMessage());
             }
 
             @Override
             public void onInterstitialShown(ShareItInterstitial shareItInterstitial) {
-                Log.d(TAG,"onInterstitialShown");//广告被展示
+            		// The interstitial has been shown. 
+                Log.d(TAG,"onInterstitialShown");
             }
 
             @Override
             public void onInterstitialClicked(ShareItInterstitial shareItInterstitial) {
-                Log.d(TAG,"onInterstitialClicked");//广告被点击
+                Log.d(TAG,"onInterstitialClicked");
             }
 
             @Override
             public void onInterstitialDismissed(ShareItInterstitial shareItInterstitial) {
-                Log.d(TAG,"onInterstitialDismissed");//广告关闭
+                // The interstitial has being dismissed.
+                Log.d(TAG,"onInterstitialDismissed");
             }
         });
 interstitial.load();//发起请求
 ```
 
-#### 步骤2：展示
+#### Step 2. Display an Interstitial Ad
+
+If `isReady()` returns true, display the interstitial by calling the `show()` method
 
 ```
-if(shareItInterstitial.isReady()){//广告准备完毕
-    shareItInterstitial.show();//展示广告
+if(shareItInterstitial.isReady()){
+    shareItInterstitial.show();
 }
 ```
 
-#### 步骤3：销毁
+#### Step 3：Destory
 
-在Activity销毁时或相应时机进行销毁
+When the interstitial Ad dismissed use the `destroy()`
 
 ```
 shareItInterstitial.destory();
 ```
 
-#### 预加载
+### Ad Preload
 
-使用preload方法进行提前预加载，可以减少在展示时机时load的时长
+Using the `preload()` to preload in advance reduces the load time at presentation time
 
 ```
 interstitial.preload();
@@ -456,78 +477,84 @@ interstitial.preload();
 
 
 
-## 激励视频广告 RewardedVideo
+## Rewarded Video Ads
 
-激励视频广告是保持用户沉浸于你的应用并赚取广告收益的有效方法。激励通常以游戏内货币的形式出现(游戏帮助:如金币、金币、升级道具等)，并在玩家成功完成视频后分发给他们。
+Rewarded video ads are a great way to keep users engaged in your app while earning ad revenue. The reward generally comes in the form of in-game currency (gold, coins, power-ups, etc.) and is distributed to the user after a successful video completion.
 
-###  先决条件
+###  Prerequisites
 
-在将激励视频广告集成到您的应用之前：
+1. create an account, create an [app](), and create an [ad unit]() using the format ‘Rewarded Video’.
+2. Follow our steps to [integrate the SHAREit Open SDK]() into your project.
+3. Integrated the Shareit Ad open SDK
 
-1. 申请对应广告位，并将[SDK集成](https://github.com/sunitsdk/ShareitOpenSDKDemo#%E9%9B%86%E6%88%90)到您的项目中。
-2. 初始化
+### Basic Integration
 
-### 在您的应用中加载激励视频广告
-
-#### 步骤1：请求
+####  Step 1： Request and Cache the Rewarded Video
 
 ```
 ShareItRewardedAd rewardedAd = new ShareItRewardedAd(getContext(), REWARDED_UNIT_ID);
 rewardedAd.setRewardedAdListener(new ShareItRewardedAd.RewardedVideoAdListener() {
     @Override
     public void onRewardedAdLoaded(final ShareItRewardedAd shareItRewardedAd) {
-        Log.d(TAG, "onRewardedAdLoaded");//加载成功
+    		// Called when the video for the given adUnitId has loaded.
+        Log.d(TAG, "onRewardedAdLoaded");
     }
 
     @Override
     public void onRewardedAdFailed(ShareItRewardedAd shareItRewardedAd, AdException e) {
-        Log.d(TAG, "onRewardedAdFailed e = " + e.getMessage());//加载失败
+    		// Called when a video fails to load for the given adUnitId. 
+        Log.d(TAG, "onRewardedAdFailed e = " + e.getMessage());
     }
 
     @Override
     public void onRewardedAdShown(ShareItRewardedAd shareItRewardedAd) {
-        Log.d(TAG, "onRewardedAdShown");//广告被展示
+    		// Called when a rewarded video starts playing.
+        Log.d(TAG, "onRewardedAdShown");
     }
 
     @Override
     public void onRewardedAdClicked(ShareItRewardedAd shareItRewardedAd) {
-        Log.d(TAG, "onRewardedAdClicked");//广告被点击
+    		//  Called when a rewarded video is clicked.
+        Log.d(TAG, "onRewardedAdClicked");
     }
 
     @Override
     public void onRewardedVideoClosed(ShareItRewardedAd shareItRewardedAd) {
-        Log.d(TAG, "onRewardedVideoClosed");//广告关闭
+   		  // Called when a rewarded video is closed.
+        Log.d(TAG, "onRewardedVideoClosed");
     }
 
     @Override
     public void onRewardedVideoCompleted(ShareItRewardedAd shareItRewardedAd) {
-        Log.d(TAG, "onRewardedVideoCompleted");//激励回调
+    		// Called when a rewarded video is completed and the user should be rewarded.
+        Log.d(TAG, "onRewardedVideoCompleted");
     }
 });
-rewardedAd.load();//发起请求
+rewardedAd.load();//Request ad
 ```
 
-#### 步骤2：展示
+#### Step 2：Display an Rewarded Ad
+
+If `isReady()` returns true, display the interstitial by calling the `show()` method
 
 ```
-if (shareItRewardedAd.isReady()) {//广告准备完毕
-    shareItRewardedAd.show();//展示广告
+if (shareItRewardedAd.isReady()) {
+    shareItRewardedAd.show();
 }
 ```
 
-#### 步骤3：销毁
+#### Step 3：Destory
 
-在Activity销毁时或相应时机进行销毁
+When the Rewarded Ad dismissed use the `destroy()`
 
 ```
 shareItRewardedAd.destory();
 ```
 
-#### 预加载
+### Ad Preload
 
-使用preload方法进行提前预加载，可以减少在展示时机时load的时长
+Using the `preload()` to preload in advance reduces the load time at presentation time
 
 ```
 shareItRewardedAd.preload();
 ```
-
