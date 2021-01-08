@@ -1,4 +1,4 @@
-# SHAREit Open SDK document
+# SHAREit Open SDK Document
 
 ## Get Started with SHAREit Open SDK
 
