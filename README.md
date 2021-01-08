@@ -38,7 +38,7 @@ android {
 
 ### Step 2.Update Your Android Manifest
 
-Upate your AndroidManifest.xml in order to complete the SDK integration. Add the following permissions and activity declarations according to the bundle you are integrating.
+Update your AndroidManifest.xml in order to complete the SDK integration. Add the following permissions and activity declarations according to the bundle you are integrating.
 
 1. Declare the following permissions:
 
