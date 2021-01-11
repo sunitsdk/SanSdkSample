@@ -7,6 +7,10 @@ Welcome to SHAREit Ad! This navigation will provide the comprehensive guidelines
 Aggregate twelve mainstream online advertising platforms including AdColony, Admob, AppLovin, Facebook, Fyber, InMobi, Ironsource, Mintegral, Mopub, TopOn, UnityAds, Vungle with native, banner , interstitial and rewarded video Ad available.
 
 ## Integrate the SHAREit Open SDK for Android
+**Prerequisites**
+- Use Android Studio 3.2 or higher
+- minSdkVersion 16 or higher
+- compileSdkVersion 28 or higher
 
 ### Step 1. Download the SHAREit Ad Android SDK
 
