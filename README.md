@@ -9,6 +9,7 @@ Aggregate twelve mainstream online advertising platforms including AdColony, Adm
 ## Integrate the SHAREit Open SDK for Android
 **Prerequisites**
 - Use Android Studio 3.2 or higher
+- Support androidX
 - minSdkVersion 16 or higher
 - compileSdkVersion 28 or higher
 
