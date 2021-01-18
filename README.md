@@ -357,41 +357,40 @@ The Sample:
 
 ```
   BaseNativeAd nativeAd;//The BaseNativeAd is obtained from onNativeLoaded()
-  SanNativeAd midasAd = (SanNativeAd) nativeAd;
-  com.ushareit.ads.MediaView mediaView = findViewById(R.id.native_main_image);
+  MediaView mediaView = findViewById(R.id.native_main_image);
   TextView title = findViewById(R.id.native_title);
   TextView text = findViewById(R.id.native_text);
-  com.ushareit.ads.MediaView iconView = findViewById(R.id.native_icon_image);
+  MediaView iconView = findViewById(R.id.native_icon_image);
   TextView button = findViewById(R.id.native_cta);
   
   title.setText(nativeAd.getTitle());
-  text.setText(nativeAd.getText());
+  text.setText(nativeAd.getContent());
   button.setText(nativeAd.getCallToAction());
   AdViewRenderHelper.loadImage(getContext(), nativeAd.getIconUrl(), iconView);
   List<View> clickViews = new ArrayList<>();
   clickViews.add(mediaView);
   clickViews.add(iconView);
   clickViews.add(button);
-  midasAd.registerViewForInteraction(adView, mediaView, clickViews);
+  nativeAd.registerViewForInteraction(adView, mediaView, clickViews);
 ```
 
 - Method 2: Use the Renderer
 
 ```
   BaseNativeAd nativeAd;//The BaseNativeAd is obtained from onNativeLoaded()
-  SanNativeAd midasAd = (SanNativeAd) nativeAd;
-  SUnitNativeAdRenderer midasAdRenderer = new SUnitNativeAdRenderer(
-          new SUnitNativeAdRenderer.SUnitViewBinder.Builder(R.layout.ad_item_layout)
-                  .iconImageId(R.id.native_icon_image)
-                  .mainImageId(R.id.native_main_image)
-                  .titleId(R.id.native_title)
-                  .textId(R.id.native_text)
-                  .callToActionId(R.id.native_cta)
-                  .build());
-  if (getContext() == null)
-      return;
-  View adView = midasAdRenderer.createAdView(getContext(), null);
-  midasAdRenderer.renderAdView(adView, midasAd);
+  SanNativeAdRenderer adRenderer = new SanNativeAdRenderer(
+        new SanNativeAdRenderer.SViewBinder.Builder(R.layout.ad_item_layout)
+                .iconImageId(R.id.native_icon_image)
+                .mainImageId(R.id.native_main_image)
+                .titleId(R.id.native_title)
+                .textId(R.id.native_text)
+                .callToActionId(R.id.native_cta)
+                .build());
+
+  if (getContext()==null)
+     return;
+  View adView = adRenderer.createAdView(getContext(), nativeAd, null);
+  adRenderer.renderAdView(adView, nativeAd);
   mAdContainer.removeAllViews();
   mAdContainer.addView(adView);
 ```
