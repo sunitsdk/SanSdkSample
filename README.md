@@ -144,7 +144,7 @@ Before integrating banner ads in your app:
 Start by including this XML block to your `Activity`’s or `Fragment`’s layout. We will fill in the details later:
 
 ```
-<com.uSan.ads.SanBannerView
+<com.ushareit.ads.SanBannerView
     android:layout_width=""
     android:layout_height=""/>
 ```
@@ -268,7 +268,7 @@ The Sample:
     android:layout_height="wrap_content"
     android:background="@android:color/white">
 
-    <com.uSan.ads.MediaView
+    <com.ushareit.ads.MediaView
         android:id="@+id/native_icon_image"
         android:layout_width="64dp"
         android:layout_height="64dp"
@@ -306,7 +306,7 @@ The Sample:
         android:layout_marginTop="10dp"
         android:textColor="@android:color/darker_gray" />
 
-    <com.uSan.ads.MediaView
+    <com.ushareit.ads.MediaView
         android:id="@+id/native_main_image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -358,10 +358,10 @@ The Sample:
 ```
   BaseNativeAd nativeAd;//The BaseNativeAd is obtained from onNativeLoaded()
   SanNativeAd midasAd = (SanNativeAd) nativeAd;
-  com.uSan.ads.MediaView mediaView = findViewById(R.id.native_main_image);
+  com.ushareit.ads.MediaView mediaView = findViewById(R.id.native_main_image);
   TextView title = findViewById(R.id.native_title);
   TextView text = findViewById(R.id.native_text);
-  com.uSan.ads.MediaView iconView = findViewById(R.id.native_icon_image);
+  com.ushareit.ads.MediaView iconView = findViewById(R.id.native_icon_image);
   TextView button = findViewById(R.id.native_cta);
   
   title.setText(nativeAd.getTitle());
@@ -460,8 +460,8 @@ interstitial.load();//Request Ad
 If `isReady()` returns true, display the interstitial by calling the `show()` method
 
 ```
-if(SanInterstitial.isReady()){
-    SanInterstitial.show();
+if(sanInterstitial.isReady()){
+    sanInterstitial.show();
 }
 ```
 
@@ -470,7 +470,7 @@ if(SanInterstitial.isReady()){
 When the interstitial Ad dismissed use the `destroy()`
 
 ```
-SanInterstitial.destory();
+sanInterstitial.destory();
 ```
 
 ### Ad Preload
@@ -544,8 +544,8 @@ rewardedAd.load();//Request ad
 If `isReady()` returns true, display the interstitial by calling the `show()` method
 
 ```
-if (SanRewardedAd.isReady()) {
-    SanRewardedAd.show();
+if (sanRewardedAd.isReady()) {
+    sanRewardedAd.show();
 }
 ```
 
@@ -554,7 +554,7 @@ if (SanRewardedAd.isReady()) {
 When the Rewarded Ad dismissed use the `destroy()`
 
 ```
-SanRewardedAd.destory();
+sanRewardedAd.destory();
 ```
 
 ### Ad Preload
@@ -562,5 +562,5 @@ SanRewardedAd.destory();
 Using the `preload()` to preload in advance reduces the load time at presentation time
 
 ```
-SanRewardedAd.preload();
+sanRewardedAd.preload();
 ```
