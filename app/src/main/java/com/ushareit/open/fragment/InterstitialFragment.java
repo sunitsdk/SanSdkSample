@@ -10,7 +10,7 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.ushareit.ads.ShareItInterstitial;
+import com.ushareit.ads.SanInterstitial;
 import com.ushareit.ads.base.AdException;
 import com.ushareit.open.R;
 
@@ -28,31 +28,31 @@ public class InterstitialFragment extends Fragment {
     }
 
     private void loadAndShowInterstitialAd() {
-        ShareItInterstitial interstitial = new ShareItInterstitial(getContext(), INTERSTITIAL_UNIT_ID);
-        interstitial.setInterstitialAdListener(new ShareItInterstitial.InterstitialAdListener() {
+        SanInterstitial interstitial = new SanInterstitial(getContext(), INTERSTITIAL_UNIT_ID);
+        interstitial.setInterstitialAdListener(new SanInterstitial.InterstitialAdListener() {
             @Override
-            public void onInterstitialLoaded(final ShareItInterstitial shareItInterstitial) {
+            public void onInterstitialLoaded(final SanInterstitial shareItInterstitial) {
                 Log.d(TAG, "onInterstitialLoaded");
                 shareItInterstitial.show();
             }
 
             @Override
-            public void onInterstitialFailed(ShareItInterstitial shareItInterstitial, AdException e) {
+            public void onInterstitialFailed(SanInterstitial shareItInterstitial, AdException e) {
                 Log.d(TAG,"onInterstitialFailed e = " + e.getMessage());
             }
 
             @Override
-            public void onInterstitialShown(ShareItInterstitial shareItInterstitial) {
+            public void onInterstitialShown(SanInterstitial shareItInterstitial) {
                 Log.d(TAG,"onInterstitialShown");
             }
 
             @Override
-            public void onInterstitialClicked(ShareItInterstitial shareItInterstitial) {
+            public void onInterstitialClicked(SanInterstitial shareItInterstitial) {
                 Log.d(TAG,"onInterstitialClicked");
             }
 
             @Override
-            public void onInterstitialDismissed(ShareItInterstitial shareItInterstitial) {
+            public void onInterstitialDismissed(SanInterstitial shareItInterstitial) {
                 Log.d(TAG,"onInterstitialDismissed");
             }
         });
