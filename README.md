@@ -1,4 +1,4 @@
-# SHAREit Audience Network Open SDK document
+# SHAREit Audience Network Android document
 
 ## Get Started with San Open SDK
 
