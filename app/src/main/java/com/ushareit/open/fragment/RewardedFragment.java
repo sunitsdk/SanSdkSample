@@ -10,7 +10,7 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.ushareit.ads.SanRewardedAd;
+import com.san.ads.SanRewardedAd;
 import com.ushareit.ads.base.AdException;
 import com.ushareit.open.R;
 

@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
-import com.ushareit.ads.SanBannerView;
+import com.san.ads.SanBannerView;
 import com.ushareit.ads.base.AdException;
 import com.ushareit.open.R;
 

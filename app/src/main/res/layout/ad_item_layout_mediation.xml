@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:background="@android:color/white">
 
-    <com.ushareit.ads.MediaView
+    <com.san.ads.MediaView
         android:id="@+id/native_icon_image"
         android:layout_width="64dp"
         android:layout_height="64dp"
@@ -22,12 +22,12 @@
         android:id="@+id/native_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/native_icon_image"
-        android:layout_toRightOf="@+id/native_icon_image"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="84dp"
+        android:layout_marginLeft="84dp"
         android:layout_marginTop="32dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:textColor="@android:color/darker_gray"
         android:textStyle="bold" />
 
@@ -43,7 +43,7 @@
         android:layout_marginTop="10dp"
         android:textColor="@android:color/darker_gray" />
 
-    <com.ushareit.ads.MediaView
+    <com.san.ads.MediaView
         android:id="@+id/native_main_image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -57,7 +57,7 @@
         android:scaleType="centerCrop" />
 
     <Button
-        android:id="@+id/native_cta"
+        android:id="@+id/native_button"
         android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -68,16 +68,13 @@
         android:background="@drawable/ads_button_bg"
         android:clickable="true"
         android:focusable="true"
-        android:singleLine="true"
         android:textColor="@color/white"
         android:textStyle="bold" />
 
     <FrameLayout
-        android:id="@+id/ad_choices"
+        android:id="@+id/ad_choise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentTop="true"/>
 
 </RelativeLayout>

@@ -1,4 +1,4 @@
-# SHAREit Open SDK document
+# SHAREit Audience Network Open SDK document
 
 ## Get Started with San Open SDK
 
@@ -15,7 +15,7 @@ Aggregate twelve mainstream online advertising platforms including AdColony, Adm
 
 ### Step 1. Download the San Ad Android SDK
 
-The San Open SDK is available as an AAR via Bintray.To add the San-ad-open sdk dependency, open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
+The San Open SDK is available as an AAR via Bintray.To add the san-sdk dependency, open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
 ```
 repositories {
@@ -26,7 +26,7 @@ repositories {
 
 dependencies {
     // ... other project dependencies
-    api "com.sunit:San-ad-open:3.0.0.+"// San open sdk
+    api "com.sunit:san-sdk:3.0.1.+"// San open sdk
 }
 ```
 
@@ -43,7 +43,7 @@ android {
 
 ### Step 2.Update Your Android Manifest
 
-Update your AndroidManifest.xml in order to complete the SDK integration. Add the following permissions and activity declarations according to the bundle you are integrating.
+Update your `AndroidManifest.xml` in order to complete the SDK integration. Add the following permissions and activity declarations according to the bundle you are integrating.
 
 1. Declare the following permissions:
 
@@ -92,15 +92,15 @@ Oct 01, 2020 - Android 9.0 (API 28) blocks cleartext (non-HTTPS) traffic by defa
 
 Once you’ve completed the above steps, you can start displaying ads in your application by configuring the ad units as shown in the link below for your ad format:
 
-- [Banner](https://github.com/sunitsdk/SanOpenSDKDemo/blob/master/README.md#banner-ads)
-- [Native](https://github.com/sunitsdk/SanOpenSDKDemo/blob/master/README.md#native-ads)
-- [Interstitial](https://github.com/sunitsdk/SanOpenSDKDemo/blob/master/README.md#interstitial-ads)
-- [Rewarded Video](https://github.com/sunitsdk/SanOpenSDKDemo/blob/master/README.md#rewarded-video-ads)
+- [Banner]()
+- [Native]()
+- [Interstitial]()
+- [Rewarded Video]()
 
 
 ## Initialize
 
-After you have integrated the San Ad open SDK and created an ad unit, you must call `SanAd.init()` **before you send any ad requests**. Initialization is **required** for a number of new functionalities:
+After you have integrated the San open SDK and created an ad unit, you must call `SanAd.init()` **before you send any ad requests**. Initialization is **required** for a number of new functionalities:
 
 It is recommended to initialize in `Application onCreate()`
 
@@ -118,6 +118,9 @@ public class MyApplication extends MultiDexApplication {
 
 
 ## Changelog
+### 3.0.1.3 (January 19,2021)
+- Rename package and sdk name.
+
 
 ### 3.0.0.0 (January 8,2021)
 
@@ -134,7 +137,7 @@ Banner ads usually appear at the top or bottom of your app’s screen. Adding on
 Before integrating banner ads in your app:
 
 1. create an account, create an **App**, and create an **Ad unit** using the format ‘Banner’.
-2. Follow our steps to [Integrate the San Open SDK](https://github.com/sunitsdk/SanOpenSDKDemo/blob/master/README.md#integrate-the-San-open-sdk-for-android) into your project.
+2. Follow our steps to [Integrate the San SDK for Android]() into your project.
 3. Integrated the San Ad open SDK
 
 ### Loading Banner Ads in Your App
@@ -144,17 +147,17 @@ Before integrating banner ads in your app:
 Start by including this XML block to your `Activity`’s or `Fragment`’s layout. We will fill in the details later:
 
 ```
-<com.ushareit.ads.SanBannerView
+<com.san.ads.SanBannerView
     android:layout_width=""
     android:layout_height=""/>
 ```
 
 #### Step 2. Load an Ad Into the Banner Slot
 
-Next, in your `Activity` or `Fragment` code, declare an instance variable for your `sanBannerView`：
+Next, in your `Activity` or `Fragment` code, declare an instance variable for your `SanBannerView`：
 
 ```
-private sanBannerView banner;
+private SanBannerView banner;
 ```
 
 You should already have created an ad unit on Midas’s site and received an Ad Unit ID. You’ll use it now to identify that ad unit in your app and request ads from Midas that are relevant for your users.
@@ -168,7 +171,7 @@ banner.setAdSize(adSize);
 banner.loadAd();
 ```
 
-When the hosting `Activity` or `Fragment` is destroyed, be sure to also destroy the `MoPubView` by calling:
+When the hosting `Activity` or `Fragment` is destroyed, be sure to also destroy the `SanBannerView` by calling:
 
 ```
 banner.destory();
@@ -222,7 +225,7 @@ Native ads let you monetize your app in a way that’s consistent with its exist
 Before integrating native ads into your app:
 
 1. create an account, create an **App**, and create an **Ad unit** using the format ‘Native’.
-2. Follow our steps to [Integrate the San Open SDK](https://github.com/sunitsdk/SanOpenSDKDemo/blob/master/README.md#integrate-the-San-open-sdk-for-android) into your project.
+2. Follow our steps to [Integrate the San SDK for Android]() into your project.
 3. Integrated the San Ad open SDK
 
 ####  Step 1. Request the Native Ad
@@ -268,7 +271,7 @@ The Sample:
     android:layout_height="wrap_content"
     android:background="@android:color/white">
 
-    <com.ushareit.ads.MediaView
+    <ImageView
         android:id="@+id/native_icon_image"
         android:layout_width="64dp"
         android:layout_height="64dp"
@@ -306,7 +309,7 @@ The Sample:
         android:layout_marginTop="10dp"
         android:textColor="@android:color/darker_gray" />
 
-    <com.ushareit.ads.MediaView
+    <com.san.ads.MediaView
         android:id="@+id/native_main_image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -353,46 +356,34 @@ The Sample:
 
 #### Step 3：Show Native Ads
 
-- Method 1: Get SanNativeAd to show
+- Get SanNativeAd to show
 
 ```
   BaseNativeAd nativeAd;//The BaseNativeAd is obtained from onNativeLoaded()
-  MediaView mediaView = findViewById(R.id.native_main_image);
-  TextView title = findViewById(R.id.native_title);
-  TextView text = findViewById(R.id.native_text);
-  MediaView iconView = findViewById(R.id.native_icon_image);
-  TextView button = findViewById(R.id.native_cta);
+  TextView titleText = contentView.findViewById(R.id.native_title);
+  TextView contentText = contentView.findViewById(R.id.native_text);
+  TextView buttonView = contentView.findViewById(R.id.native_button);
+  ImageView iconImage = contentView.findViewById(R.id.native_icon_image);
+  MediaView mediaLayout = contentView.findViewById(R.id.native_main_image);
   
-  title.setText(nativeAd.getTitle());
-  text.setText(nativeAd.getContent());
-  button.setText(nativeAd.getCallToAction());
-  AdViewRenderHelper.loadImage(getContext(), nativeAd.getIconUrl(), iconView);
+  //text
+  titleText.setText(nativeAd.getTitle());
+  contentText.setText(nativeAd.getContent());
+  buttonView.setText(nativeAd.getCallToAction());
+  //icon
+  AdViewRenderHelper.loadImage(iconImage.getContext(), nativeAd.getIconUrl(), iconImage);
+  //media view
+  mediaLayout.loadMediaView(nativeAd);
+  
+  //click list
   List<View> clickViews = new ArrayList<>();
-  clickViews.add(mediaView);
-  clickViews.add(iconView);
-  clickViews.add(button);
-  nativeAd.registerViewForInteraction(adView, mediaView, clickViews);
-```
-
-- Method 2: Use the Renderer
-
-```
-  BaseNativeAd nativeAd;//The BaseNativeAd is obtained from onNativeLoaded()
-  SanNativeAdRenderer adRenderer = new SanNativeAdRenderer(
-        new SanNativeAdRenderer.SViewBinder.Builder(R.layout.ad_item_layout)
-                .iconImageId(R.id.native_icon_image)
-                .mainImageId(R.id.native_main_image)
-                .titleId(R.id.native_title)
-                .textId(R.id.native_text)
-                .callToActionId(R.id.native_cta)
-                .build());
-
-  if (getContext()==null)
-     return;
-  View adView = adRenderer.createAdView(getContext(), nativeAd, null);
-  adRenderer.renderAdView(adView, nativeAd);
-  mAdContainer.removeAllViews();
-  mAdContainer.addView(adView);
+  clickViews.add(titleText);
+  clickViews.add(contentText);
+  clickViews.add(buttonView);
+  clickViews.add(iconImage);
+  clickViews.add(mediaLayout);
+  //prepare
+  nativeAd.prepare(contentView, clickViews, null);
 ```
 
 ### Ad Preload
@@ -412,7 +403,7 @@ Interstitial ads provide full-screen experiences, commonly incorporating rich me
 ###  Prerequisites
 
 1. create an account, create an **App**, and create an **Ad unit** using the format ‘Interstitial’.
-2. Follow our steps to [Integrate the San Open SDK](https://github.com/sunitsdk/SanOpenSDKDemo/blob/master/README.md#integrate-the-San-open-sdk-for-android) into your project.
+2. Follow our steps to [Integrate the San SDK for Android]() into your project.
 3. Integrated the San Ad open SDK
 
 ### Load Interstitial Ads in Your App
@@ -459,8 +450,8 @@ interstitial.load();//Request Ad
 If `isReady()` returns true, display the interstitial by calling the `show()` method
 
 ```
-if(sanInterstitial.isReady()){
-    sanInterstitial.show();
+if(SanInterstitial.isReady()){
+    SanInterstitial.show();
 }
 ```
 
@@ -469,7 +460,7 @@ if(sanInterstitial.isReady()){
 When the interstitial Ad dismissed use the `destroy()`
 
 ```
-sanInterstitial.destory();
+SanInterstitial.destory();
 ```
 
 ### Ad Preload
@@ -489,7 +480,7 @@ Rewarded video ads are a great way to keep users engaged in your app while earni
 ###  Prerequisites
 
 1. create an account, create an **App**, and create an **Ad unit** using the format ‘Rewarded Video’.
-2. Follow our steps to [Integrate the San Open SDK](https://github.com/sunitsdk/SanOpenSDKDemo/blob/master/README.md#integrate-the-San-open-sdk-for-android) into your project.
+2. Follow our steps to [Integrate the San SDK for Android]() into your project.
 3. Integrated the San Ad open SDK
 
 ### Basic Integration
@@ -543,8 +534,8 @@ rewardedAd.load();//Request ad
 If `isReady()` returns true, display the interstitial by calling the `show()` method
 
 ```
-if (sanRewardedAd.isReady()) {
-    sanRewardedAd.show();
+if (SanRewardedAd.isReady()) {
+    SanRewardedAd.show();
 }
 ```
 
@@ -553,7 +544,7 @@ if (sanRewardedAd.isReady()) {
 When the Rewarded Ad dismissed use the `destroy()`
 
 ```
-sanRewardedAd.destory();
+SanRewardedAd.destory();
 ```
 
 ### Ad Preload
@@ -561,5 +552,19 @@ sanRewardedAd.destory();
 Using the `preload()` to preload in advance reduces the load time at presentation time
 
 ```
-sanRewardedAd.preload();
+SanRewardedAd.preload();
 ```
+
+##Mediation
+- [AdColony]()
+- [Admob]()
+- [AppLovin]()
+- [FacebookAudienceNetwork]()
+- [Fyber]()
+- [IronSource]()
+- [InMobi]()
+- [Mopub]()
+- [Mintegral]()
+- [TopOn]()
+- [UnityAds]()
+- [Vungle]()
