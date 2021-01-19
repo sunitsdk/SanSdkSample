@@ -19,7 +19,7 @@ AdColony currently supports the following ad formats.
 
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
-​```
+```
 repositories {
     // ... other project repositories
     maven {url "https://dl.bintray.com/sunitsdk/mediation"}// San mediation sdk
@@ -30,7 +30,7 @@ dependencies {
     // ... other project dependencies
     implementation "com.sunit.mediation:adcolony:4.1.0.8"// San mediation sdk
 }
-​```
+```
 
 #### Step 2.Update Your Android Manifest
 Add the admob key to meta-data in <application>
@@ -97,7 +97,7 @@ AppLovin currently supports the following ad formats.
 
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
-​```
+```
 repositories {
     // ... other project repositories
     maven {url "https://dl.bintray.com/sunitsdk/mediation"}// San mediation sdk
@@ -108,7 +108,7 @@ dependencies {
     // ... other project dependencies
     implementation "com.sunit.mediation:applovin:9.12.8.8"// San mediation sdk
 }
-​```
+```
 #### Step 2.Update Your Android Manifest
 Add the admob key to meta-data in <application>
 ```
@@ -142,7 +142,7 @@ Facebook currently supports the following ad formats.
 
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
-​```
+```
 repositories {
     // ... other project repositories
     maven {url "https://dl.bintray.com/sunitsdk/mediation"}// San mediation sdk
@@ -153,7 +153,7 @@ dependencies {
     // ... other project dependencies
     implementation "com.sunit.mediation:facebook:6.2.0.8"// San mediation sdk
 }
-​```
+```
 
 
 ### Fyber
@@ -174,7 +174,7 @@ Fyber currently supports the following ad formats.
 
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
-​```
+```
 repositories {
     // ... other project repositories
     maven {url "https://dl.bintray.com/sunitsdk/mediation"}// San mediation sdk
@@ -185,7 +185,7 @@ dependencies {
     // ... other project dependencies
     implementation "com.sunit.mediation:fyber:7.7.4.8"// San mediation sdk
 }
-​```
+```
 
 
 ### IronSource
@@ -206,7 +206,7 @@ IronSource currently supports the following ad formats.
 
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
-​```
+```
 repositories {
     // ... other project repositories
     maven {url "https://dl.bintray.com/sunitsdk/mediation"}// San mediation sdk
@@ -217,7 +217,7 @@ dependencies {
     // ... other project dependencies
     implementation "com.sunit.mediation:ironsource:6.10.2.8"// San mediation sdk
 }
-​```
+```
 
 
 ### InMobi
@@ -239,7 +239,7 @@ InMobi currently supports the following ad formats.
 
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
-​```
+```
 repositories {
     // ... other project repositories
     maven {url "https://dl.bintray.com/sunitsdk/mediation"}// San mediation sdk
@@ -250,7 +250,7 @@ dependencies {
     // ... other project dependencies
     implementation "com.sunit.mediation:inmobi:9.0.9.8"// San mediation sdk
 }
-​```
+```
 
 
 ### Mopub
