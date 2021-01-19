@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,17 +15,17 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ushareit.ads.BaseNativeAd;
-import com.ushareit.ads.ShareItNative;
+import com.san.ads.AdViewRenderHelper;
+import com.san.ads.MediaView;
+import com.san.ads.SanNative;
+import com.san.ads.SanNativeAdRenderer;
 import com.ushareit.ads.base.AdException;
+import com.ushareit.ads.base.BaseNativeAd;
 import com.ushareit.open.R;
 import com.ushareit.open.adapter.NativeAdListAdapter;
-import com.ushareit.open.holder.NativeAdViewBinder;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.ushareit.ads.ShareItAdRender.AD_CHOICES_VIEW;
 
 public class HomeFragment extends Fragment {
     private static final String TAG = "Native";
@@ -62,23 +64,14 @@ public class HomeFragment extends Fragment {
     }
 
     private void loadAndShowNativeAd(String adUnitId) {
-        ShareItNative shareItNative = new ShareItNative(getContext(), adUnitId, new ShareItNative.NativeNetworkListener() {
+        SanNative sanNative = new SanNative(getContext(), adUnitId, new SanNative.NativeNetworkListener() {
             @Override
             public void onNativeLoaded(BaseNativeAd nativeAd) {
-                Log.d(TAG, "onNativeLoaded");
-                NativeAdViewBinder midasAdRenderer = new NativeAdViewBinder.Builder(R.layout.ad_item_layout)
-                                .iconImageId(R.id.native_icon_image)
-                                .mainImageId(R.id.native_main_image)
-                                .titleId(R.id.native_title)
-                                .textId(R.id.native_text)
-                                .callToActionId(R.id.native_cta)
-                                .addExtra(AD_CHOICES_VIEW, R.id.ad_choices)
-                                .build();
-                View adView = midasAdRenderer.createAdView(HomeFragment.this.getContext(), nativeAd, null);
-                if (adView == null) return;
+                rendererAdView(nativeAd);//Fro san
 
-                mAdContainer.removeAllViews();
-                mAdContainer.addView(adView);
+                //If you add mediation adapter,you can use #SanNativeAdRenderer
+//                rendererAdViewForMediation(nativeAd);
+                Log.d(TAG, "onNativeLoaded");
             }
 
             @Override
@@ -96,8 +89,53 @@ public class HomeFragment extends Fragment {
                 Log.d(TAG, "onClick");
             }
         });
-        shareItNative.loadAd();
+        sanNative.loadAd();
     }
 
+    private void rendererAdView(BaseNativeAd nativeAd) {
+        View contentView = LayoutInflater.from(getContext()).inflate(R.layout.ad_native_layout, mAdContainer, false);
+        TextView titleText = contentView.findViewById(R.id.native_title);
+        TextView contentText = contentView.findViewById(R.id.native_text);
+        TextView buttonView = contentView.findViewById(R.id.native_button);
+        ImageView iconImage = contentView.findViewById(R.id.native_icon_image);
+        MediaView mediaLayout = contentView.findViewById(R.id.native_main_image);
 
+        //text
+        titleText.setText(nativeAd.getTitle());
+        contentText.setText(nativeAd.getContent());
+        buttonView.setText(nativeAd.getCallToAction());
+        //icon
+        AdViewRenderHelper.loadImage(iconImage.getContext(), nativeAd.getIconUrl(), iconImage);
+        //media view
+        mediaLayout.loadMediaView(nativeAd);
+
+        //click list
+        List<View> clickViews = new ArrayList<>();
+        clickViews.add(titleText);
+        clickViews.add(contentText);
+        clickViews.add(buttonView);
+        clickViews.add(iconImage);
+        clickViews.add(mediaLayout);
+        //prepare
+        nativeAd.prepare(contentView, clickViews, null);
+        mAdContainer.removeAllViews();
+        mAdContainer.addView(contentView);
+    }
+
+    private void rendererAdViewForMediation(BaseNativeAd nativeAd) {
+        SanNativeAdRenderer adRenderer = new SanNativeAdRenderer(
+                new SanNativeAdRenderer.SViewBinder.Builder(R.layout.ad_item_layout_mediation)
+                        .iconImageId(R.id.native_icon_image)
+                        .mainImageId(R.id.native_main_image)
+                        .titleId(R.id.native_title)
+                        .textId(R.id.native_text)
+                        .callToActionId(R.id.native_button)
+                        .build());
+        if (getContext()==null)
+            return;
+        View adView = adRenderer.createAdView(getContext(), nativeAd, null);
+        adRenderer.renderAdView(adView, nativeAd);
+        mAdContainer.removeAllViews();
+        mAdContainer.addView(adView);
+    }
 }

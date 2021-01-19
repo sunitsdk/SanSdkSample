@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
-import com.ushareit.ads.ShareItBannerView;
+import com.san.ads.SanBannerView;
 import com.ushareit.ads.base.AdException;
 import com.ushareit.open.R;
 
@@ -28,39 +28,39 @@ public class BannerFragment extends Fragment {
         final Button banner50 = root.findViewById(R.id.btn_banner_ad);
         banner50.setText(String.format("Banner320x50: %s", BANNER_UNIT_ID_320x50));
         mBannerContainer = root.findViewById(R.id.banner_container);
-        banner50.setOnClickListener(view -> loadAndShowBannerAd(ShareItBannerView.AdSize.HEIGHT_50, BANNER_UNIT_ID_320x50));
+        banner50.setOnClickListener(view -> loadAndShowBannerAd(SanBannerView.AdSize.HEIGHT_50, BANNER_UNIT_ID_320x50));
 
 
         final Button banner250 = root.findViewById(R.id.btn_banner_ad2);
         banner250.setText(String.format("Banner300x250: %s", BANNER_UNIT_ID_300x250));
-        banner250.setOnClickListener(view -> loadAndShowBannerAd(ShareItBannerView.AdSize.HEIGHT_250, BANNER_UNIT_ID_300x250));
+        banner250.setOnClickListener(view -> loadAndShowBannerAd(SanBannerView.AdSize.HEIGHT_250, BANNER_UNIT_ID_300x250));
         return root;
     }
 
-    private void loadAndShowBannerAd(ShareItBannerView.AdSize adSize, String adUnitId) {
-        ShareItBannerView banner = new ShareItBannerView(getContext());
+    private void loadAndShowBannerAd(SanBannerView.AdSize adSize, String adUnitId) {
+        SanBannerView banner = new SanBannerView(getContext());
         banner.setAdUnitId(adUnitId);
         banner.setAdSize(adSize);
-        banner.setBannerAdListener(new ShareItBannerView.BannerAdListener() {
+        banner.setBannerAdListener(new SanBannerView.BannerAdListener() {
             @Override
-            public void onBannerLoaded(@NonNull ShareItBannerView shareItBannerView) {
+            public void onBannerLoaded(@NonNull SanBannerView sanBannerView) {
                 Log.d(TAG,"onBannerLoaded");
                 mBannerContainer.removeAllViews();
-                mBannerContainer.addView(shareItBannerView);
+                mBannerContainer.addView(sanBannerView);
             }
 
             @Override
-            public void onBannerFailed(ShareItBannerView shareItBannerView, AdException e) {
+            public void onBannerFailed(SanBannerView sanBannerView, AdException e) {
                 Log.d(TAG,"onBannerFailed exception = " + e.getMessage());
             }
 
             @Override
-            public void onBannerClicked(ShareItBannerView shareItBannerView) {
+            public void onBannerClicked(SanBannerView sanBannerView) {
                 Log.d(TAG,"onBannerClicked");
             }
 
             @Override
-            public void onBannerImpression(ShareItBannerView shareItBannerView) {
+            public void onBannerImpression(SanBannerView sanBannerView) {
                 Log.d(TAG,"onBannerImpression");
             }
         });

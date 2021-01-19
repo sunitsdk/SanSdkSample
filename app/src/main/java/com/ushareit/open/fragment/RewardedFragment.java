@@ -10,7 +10,7 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.ushareit.ads.ShareItRewardedAd;
+import com.san.ads.SanRewardedAd;
 import com.ushareit.ads.base.AdException;
 import com.ushareit.open.R;
 
@@ -28,36 +28,36 @@ public class RewardedFragment extends Fragment {
     }
 
     private void loadAndShowRewardedAd() {
-        ShareItRewardedAd rewardedAd = new ShareItRewardedAd(getContext(), REWARDED_UNIT_ID);
-        rewardedAd.setRewardedAdListener(new ShareItRewardedAd.RewardedVideoAdListener() {
+        SanRewardedAd rewardedAd = new SanRewardedAd(getContext(), REWARDED_UNIT_ID);
+        rewardedAd.setRewardedAdListener(new SanRewardedAd.RewardedVideoAdListener() {
             @Override
-            public void onRewardedAdLoaded(final ShareItRewardedAd shareItRewardedAd) {
+            public void onRewardedAdLoaded(final SanRewardedAd shareItRewardedAd) {
                 Log.d(TAG, "onRewardedAdLoaded");
                 shareItRewardedAd.show();
             }
 
             @Override
-            public void onRewardedAdFailed(ShareItRewardedAd shareItRewardedAd, AdException e) {
+            public void onRewardedAdFailed(SanRewardedAd shareItRewardedAd, AdException e) {
                 Log.d(TAG, "onRewardedAdFailed e = " + e.getMessage());
             }
 
             @Override
-            public void onRewardedAdShown(ShareItRewardedAd shareItRewardedAd) {
+            public void onRewardedAdShown(SanRewardedAd shareItRewardedAd) {
                 Log.d(TAG, "onRewardedAdShown");
             }
 
             @Override
-            public void onRewardedAdClicked(ShareItRewardedAd shareItRewardedAd) {
+            public void onRewardedAdClicked(SanRewardedAd shareItRewardedAd) {
                 Log.d(TAG, "onRewardedAdClicked");
             }
 
             @Override
-            public void onRewardedVideoClosed(ShareItRewardedAd shareItRewardedAd) {
+            public void onRewardedVideoClosed(SanRewardedAd shareItRewardedAd) {
                 Log.d(TAG, "onRewardedVideoClosed");
             }
 
             @Override
-            public void onRewardedVideoCompleted(ShareItRewardedAd shareItRewardedAd) {
+            public void onRewardedVideoCompleted(SanRewardedAd shareItRewardedAd) {
                 Log.d(TAG, "onRewardedVideoCompleted");
             }
         });

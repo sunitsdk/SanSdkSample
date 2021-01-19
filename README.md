@@ -1,32 +1,32 @@
-# SHAREit Open SDK Document
+# SHAREit Audience Network Open SDK document
 
-## Get Started with SHAREit Open SDK
+## Get Started with San Open SDK
 
-Welcome to SHAREit Ad! This navigation will provide the comprehensive guidelines including the SDK integration document, Midas platform's configuration guides, advanced features and classic monetization cases, which will navigate you to use SHAREit Open Mediation quickly and maximize your monetization.
+Welcome to San Ad! This navigation will provide the comprehensive guidelines including the SDK integration document, Midas platform's configuration guides, advanced features and classic monetization cases, which will navigate you to use San Open Mediation quickly and maximize your monetization.
 
 Aggregate twelve mainstream online advertising platforms including AdColony, Admob, AppLovin, Facebook, Fyber, InMobi, Ironsource, Mintegral, Mopub, TopOn, UnityAds, Vungle with native, banner , interstitial and rewarded video Ad available.
 
-## Integrate the SHAREit Open SDK for Android
+## Integrate the San SDK for Android
 **Prerequisites**
 - Use Android Studio 3.2 or higher
 - Support androidX
 - minSdkVersion 16 or higher
 - compileSdkVersion 28 or higher
 
-### Step 1. Download the SHAREit Ad Android SDK
+### Step 1. Download the San Ad Android SDK
 
-The Shareit Open SDK is available as an AAR via Bintray.To add the shareit-ad-open sdk dependency, open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
+The San Open SDK is available as an AAR via Bintray.To add the san-sdk dependency, open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
 ```
 repositories {
     // ... other project repositories
-    maven {url "https://dl.bintray.com/sunitsdk/SUnit"}// shareit open sdk
+    maven {url "https://dl.bintray.com/sunitsdk/SUnit"}// San open sdk
 }
 //...
 
 dependencies {
     // ... other project dependencies
-    api "com.sunit:shareit-ad-open:3.0.0.+"// shareit open sdk
+    api "com.sunit:san-sdk:3.0.1.+"// San open sdk
 }
 ```
 
@@ -43,7 +43,7 @@ android {
 
 ### Step 2.Update Your Android Manifest
 
-Update your AndroidManifest.xml in order to complete the SDK integration. Add the following permissions and activity declarations according to the bundle you are integrating.
+Update your `AndroidManifest.xml` in order to complete the SDK integration. Add the following permissions and activity declarations according to the bundle you are integrating.
 
 1. Declare the following permissions:
 
@@ -92,15 +92,15 @@ Oct 01, 2020 - Android 9.0 (API 28) blocks cleartext (non-HTTPS) traffic by defa
 
 Once you’ve completed the above steps, you can start displaying ads in your application by configuring the ad units as shown in the link below for your ad format:
 
-- [Banner](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/README.md#banner-ads)
-- [Native](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/README.md#native-ads)
-- [Interstitial](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/README.md#interstitial-ads)
-- [Rewarded Video](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/README.md#rewarded-video-ads)
+- [Banner]()
+- [Native]()
+- [Interstitial]()
+- [Rewarded Video]()
 
 
 ## Initialize
 
-After you have integrated the Shareit Ad open SDK and created an ad unit, you must call `ShareItAd.init()` **before you send any ad requests**. Initialization is **required** for a number of new functionalities:
+After you have integrated the San open SDK and created an ad unit, you must call `SanAd.init()` **before you send any ad requests**. Initialization is **required** for a number of new functionalities:
 
 It is recommended to initialize in `Application onCreate()`
 
@@ -110,7 +110,7 @@ public class MyApplication extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        ShareItAd.init(this);
+        SanAd.init(this);
     }
 }
 ```
@@ -118,6 +118,9 @@ public class MyApplication extends MultiDexApplication {
 
 
 ## Changelog
+### 3.0.1.3 (January 19,2021)
+- Rename package and sdk name.
+
 
 ### 3.0.0.0 (January 8,2021)
 
@@ -134,8 +137,8 @@ Banner ads usually appear at the top or bottom of your app’s screen. Adding on
 Before integrating banner ads in your app:
 
 1. create an account, create an **App**, and create an **Ad unit** using the format ‘Banner’.
-2. Follow our steps to [Integrate the SHAREit Open SDK](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/README.md#integrate-the-shareit-open-sdk-for-android) into your project.
-3. Integrated the Shareit Ad open SDK
+2. Follow our steps to [Integrate the San SDK for Android]() into your project.
+3. Integrated the San Ad open SDK
 
 ### Loading Banner Ads in Your App
 
@@ -144,31 +147,31 @@ Before integrating banner ads in your app:
 Start by including this XML block to your `Activity`’s or `Fragment`’s layout. We will fill in the details later:
 
 ```
-<com.ushareit.ads.ShareItBannerView
+<com.san.ads.SanBannerView
     android:layout_width=""
     android:layout_height=""/>
 ```
 
 #### Step 2. Load an Ad Into the Banner Slot
 
-Next, in your `Activity` or `Fragment` code, declare an instance variable for your `ShareItBannerView`：
+Next, in your `Activity` or `Fragment` code, declare an instance variable for your `SanBannerView`：
 
 ```
-private ShareItBannerView banner;
+private SanBannerView banner;
 ```
 
 You should already have created an ad unit on Midas’s site and received an Ad Unit ID. You’ll use it now to identify that ad unit in your app and request ads from Midas that are relevant for your users.
 
-In your Activity’s `onCreate()` or your Fragment’s `onCreateView()` method, set your `ShareitBannerView` Ad Unit ID, then simply call `loadAd()` to fetch and display the ad:
+In your Activity’s `onCreate()` or your Fragment’s `onCreateView()` method, set your `SanBannerView` Ad Unit ID, then simply call `loadAd()` to fetch and display the ad:
 
 ```
-banner = (ShareItBannerView)findViewById(R.id.adview);
+banner = (SanBannerView)findViewById(R.id.adview);
 banner.setAdUnitId(adUnitId);
 banner.setAdSize(adSize);
 banner.loadAd();
 ```
 
-When the hosting `Activity` or `Fragment` is destroyed, be sure to also destroy the `MoPubView` by calling:
+When the hosting `Activity` or `Fragment` is destroyed, be sure to also destroy the `SanBannerView` by calling:
 
 ```
 banner.destory();
@@ -177,27 +180,27 @@ banner.destory();
 ###  Using the Delegate
 
 ```
-banner.setBannerAdListener(new ShareItBannerView.BannerAdListener() {
+banner.setBannerAdListener(new SanBannerView.BannerAdListener() {
     @Override
-    public void onBannerLoaded(@NonNull ShareItBannerView shareItBannerView) {
+    public void onBannerLoaded(@NonNull SanBannerView sanBannerView) {
     	//the banner has successfully retrieved an ad.
         Log.d(TAG,"onBannerLoaded");
     }
 
     @Override
-    public void onBannerFailed(ShareItBannerView shareItBannerView, AdException e) {
+    public void onBannerFailed(SanBannerView sanBannerView, AdException e) {
     	//the banner has failed to retrieve an ad.
         Log.d(TAG,"onBannerFailed exception = " + e.getMessage());
     }
 
     @Override
-    public void onBannerClicked(ShareItBannerView shareItBannerView) {
+    public void onBannerClicked(SanBannerView sanBannerView) {
     	//the user has tapped on the banner.
         Log.d(TAG,"onBannerClicked");
     }
 
     @Override
-    public void onBannerImpression(ShareItBannerView shareItBannerView) {
+    public void onBannerImpression(SanBannerView sanBannerView) {
     	//the banner has showed
         Log.d(TAG,"onBannerImpression");
     }
@@ -222,13 +225,13 @@ Native ads let you monetize your app in a way that’s consistent with its exist
 Before integrating native ads into your app:
 
 1. create an account, create an **App**, and create an **Ad unit** using the format ‘Native’.
-2. Follow our steps to [Integrate the SHAREit Open SDK](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/README.md#integrate-the-shareit-open-sdk-for-android) into your project.
-3. Integrated the Shareit Ad open SDK
+2. Follow our steps to [Integrate the San SDK for Android]() into your project.
+3. Integrated the San Ad open SDK
 
 ####  Step 1. Request the Native Ad
 
 ```
-ShareItNative shareItNative = new ShareItNative(getContext(), adUnitId, new ShareItNative.NativeNetworkListener() {
+SanNative sanNative = new SanNative(getContext(), adUnitId, new SanNative.NativeNetworkListener() {
     @Override
     public void onNativeLoaded(BaseNativeAd nativeAd) {
         // Called when the ad for the given adUnitId has loaded.
@@ -253,7 +256,7 @@ ShareItNative shareItNative = new ShareItNative(getContext(), adUnitId, new Shar
         Log.d(TAG, "onClick");
     }
 });
-shareItNative.loadAd();//Request ad
+sanNative.loadAd();//Request ad
 ```
 
 #### Step 2：Create an XML layout
@@ -268,7 +271,7 @@ The Sample:
     android:layout_height="wrap_content"
     android:background="@android:color/white">
 
-    <com.ushareit.ads.MediaView
+    <ImageView
         android:id="@+id/native_icon_image"
         android:layout_width="64dp"
         android:layout_height="64dp"
@@ -306,7 +309,7 @@ The Sample:
         android:layout_marginTop="10dp"
         android:textColor="@android:color/darker_gray" />
 
-    <com.ushareit.ads.MediaView
+    <com.san.ads.MediaView
         android:id="@+id/native_main_image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -353,47 +356,34 @@ The Sample:
 
 #### Step 3：Show Native Ads
 
-- Method 1: Get ShareItNativeAd to show
+- Get SanNativeAd to show
 
 ```
   BaseNativeAd nativeAd;//The BaseNativeAd is obtained from onNativeLoaded()
-  ShareItNativeAd midasAd = (ShareItNativeAd) nativeAd;
-  com.ushareit.ads.MediaView mediaView = findViewById(R.id.native_main_image);
-  TextView title = findViewById(R.id.native_title);
-  TextView text = findViewById(R.id.native_text);
-  com.ushareit.ads.MediaView iconView = findViewById(R.id.native_icon_image);
-  TextView button = findViewById(R.id.native_cta);
+  TextView titleText = contentView.findViewById(R.id.native_title);
+  TextView contentText = contentView.findViewById(R.id.native_text);
+  TextView buttonView = contentView.findViewById(R.id.native_button);
+  ImageView iconImage = contentView.findViewById(R.id.native_icon_image);
+  MediaView mediaLayout = contentView.findViewById(R.id.native_main_image);
   
-  title.setText(nativeAd.getTitle());
-  text.setText(nativeAd.getText());
-  button.setText(nativeAd.getCallToAction());
-  AdViewRenderHelper.loadImage(getContext(), nativeAd.getIconUrl(), iconView);
+  //text
+  titleText.setText(nativeAd.getTitle());
+  contentText.setText(nativeAd.getContent());
+  buttonView.setText(nativeAd.getCallToAction());
+  //icon
+  AdViewRenderHelper.loadImage(iconImage.getContext(), nativeAd.getIconUrl(), iconImage);
+  //media view
+  mediaLayout.loadMediaView(nativeAd);
+  
+  //click list
   List<View> clickViews = new ArrayList<>();
-  clickViews.add(mediaView);
-  clickViews.add(iconView);
-  clickViews.add(button);
-  midasAd.registerViewForInteraction(adView, mediaView, clickViews);
-```
-
-- Method 2: Use the Renderer
-
-```
-  BaseNativeAd nativeAd;//The BaseNativeAd is obtained from onNativeLoaded()
-  ShareItNativeAd midasAd = (ShareItNativeAd) nativeAd;
-  SUnitNativeAdRenderer midasAdRenderer = new SUnitNativeAdRenderer(
-          new SUnitNativeAdRenderer.SUnitViewBinder.Builder(R.layout.ad_item_layout)
-                  .iconImageId(R.id.native_icon_image)
-                  .mainImageId(R.id.native_main_image)
-                  .titleId(R.id.native_title)
-                  .textId(R.id.native_text)
-                  .callToActionId(R.id.native_cta)
-                  .build());
-  if (getContext() == null)
-      return;
-  View adView = midasAdRenderer.createAdView(getContext(), null);
-  midasAdRenderer.renderAdView(adView, midasAd);
-  mAdContainer.removeAllViews();
-  mAdContainer.addView(adView);
+  clickViews.add(titleText);
+  clickViews.add(contentText);
+  clickViews.add(buttonView);
+  clickViews.add(iconImage);
+  clickViews.add(mediaLayout);
+  //prepare
+  nativeAd.prepare(contentView, clickViews, null);
 ```
 
 ### Ad Preload
@@ -401,53 +391,53 @@ The Sample:
 Using the `preload()` to preload in advance reduces the load time at presentation time
 
 ```
-shareItNative.preload();
+SanNative.preload();
 ```
 
 
 
 ## Interstitial Ads
 
-Interstitial ads provide full-screen experiences, commonly incorporating rich media to offer a higher level of interactivity compared to banner ads. Interstitials are typically shown during natural transitions in your app; for example, after completing a game level, or while waiting for a new view to load. Use the `ShareItInterstitial` object and its associated listeners to fetch and display interstitial ads in your app.
+Interstitial ads provide full-screen experiences, commonly incorporating rich media to offer a higher level of interactivity compared to banner ads. Interstitials are typically shown during natural transitions in your app; for example, after completing a game level, or while waiting for a new view to load. Use the `SanInterstitial` object and its associated listeners to fetch and display interstitial ads in your app.
 
 ###  Prerequisites
 
 1. create an account, create an **App**, and create an **Ad unit** using the format ‘Interstitial’.
-2. Follow our steps to [Integrate the SHAREit Open SDK](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/README.md#integrate-the-shareit-open-sdk-for-android) into your project.
-3. Integrated the Shareit Ad open SDK
+2. Follow our steps to [Integrate the San SDK for Android]() into your project.
+3. Integrated the San Ad open SDK
 
 ### Load Interstitial Ads in Your App
 
 #### Step 1. Create an Interstitial Ad
 
 ```
-ShareItInterstitial interstitial = new ShareItInterstitial(getContext(), INTERSTITIAL_UNIT_ID);
-interstitial.setInterstitialAdListener(new ShareItInterstitial.InterstitialAdListener() {
+SanInterstitial interstitial = new SanInterstitial(getContext(), INTERSTITIAL_UNIT_ID);
+interstitial.setInterstitialAdListener(new SanInterstitial.InterstitialAdListener() {
             @Override
-            public void onInterstitialLoaded(final ShareItInterstitial shareItInterstitial) {
+            public void onInterstitialLoaded(final SanInterstitial SanInterstitial) {
             	// The interstitial has been cached and is ready to be shown.
                 Log.d(TAG, "onInterstitialLoaded");
             }
 
             @Override
-            public void onInterstitialFailed(ShareItInterstitial shareItInterstitial, AdException e) {
+            public void onInterstitialFailed(SanInterstitial SanInterstitial, AdException e) {
             	// The interstitial has failed to load.
                 Log.d(TAG,"onInterstitialFailed e = " + e.getMessage());
             }
 
             @Override
-            public void onInterstitialShown(ShareItInterstitial shareItInterstitial) {
+            public void onInterstitialShown(SanInterstitial SanInterstitial) {
             	// The interstitial has been shown. 
                 Log.d(TAG,"onInterstitialShown");
             }
 
             @Override
-            public void onInterstitialClicked(ShareItInterstitial shareItInterstitial) {
+            public void onInterstitialClicked(SanInterstitial SanInterstitial) {
                 Log.d(TAG,"onInterstitialClicked");
             }
 
             @Override
-            public void onInterstitialDismissed(ShareItInterstitial shareItInterstitial) {
+            public void onInterstitialDismissed(SanInterstitial SanInterstitial) {
                 // The interstitial has being dismissed.
                 Log.d(TAG,"onInterstitialDismissed");
             }
@@ -460,8 +450,8 @@ interstitial.load();//Request Ad
 If `isReady()` returns true, display the interstitial by calling the `show()` method
 
 ```
-if(shareItInterstitial.isReady()){
-    shareItInterstitial.show();
+if(SanInterstitial.isReady()){
+    SanInterstitial.show();
 }
 ```
 
@@ -470,7 +460,7 @@ if(shareItInterstitial.isReady()){
 When the interstitial Ad dismissed use the `destroy()`
 
 ```
-shareItInterstitial.destory();
+SanInterstitial.destory();
 ```
 
 ### Ad Preload
@@ -490,48 +480,48 @@ Rewarded video ads are a great way to keep users engaged in your app while earni
 ###  Prerequisites
 
 1. create an account, create an **App**, and create an **Ad unit** using the format ‘Rewarded Video’.
-2. Follow our steps to [Integrate the SHAREit Open SDK](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/README.md#integrate-the-shareit-open-sdk-for-android) into your project.
-3. Integrated the Shareit Ad open SDK
+2. Follow our steps to [Integrate the San SDK for Android]() into your project.
+3. Integrated the San Ad open SDK
 
 ### Basic Integration
 
 ####  Step 1： Request and Cache the Rewarded Video
 
 ```
-ShareItRewardedAd rewardedAd = new ShareItRewardedAd(getContext(), REWARDED_UNIT_ID);
-rewardedAd.setRewardedAdListener(new ShareItRewardedAd.RewardedVideoAdListener() {
+SanRewardedAd rewardedAd = new SanRewardedAd(getContext(), REWARDED_UNIT_ID);
+rewardedAd.setRewardedAdListener(new SanRewardedAd.RewardedVideoAdListener() {
     @Override
-    public void onRewardedAdLoaded(final ShareItRewardedAd shareItRewardedAd) {
+    public void onRewardedAdLoaded(final SanRewardedAd SanRewardedAd) {
     	// Called when the video for the given adUnitId has loaded.
         Log.d(TAG, "onRewardedAdLoaded");
     }
 
     @Override
-    public void onRewardedAdFailed(ShareItRewardedAd shareItRewardedAd, AdException e) {
+    public void onRewardedAdFailed(SanRewardedAd SanRewardedAd, AdException e) {
     	// Called when a video fails to load for the given adUnitId. 
         Log.d(TAG, "onRewardedAdFailed e = " + e.getMessage());
     }
 
     @Override
-    public void onRewardedAdShown(ShareItRewardedAd shareItRewardedAd) {
+    public void onRewardedAdShown(SanRewardedAd SanRewardedAd) {
     	// Called when a rewarded video starts playing.
         Log.d(TAG, "onRewardedAdShown");
     }
 
     @Override
-    public void onRewardedAdClicked(ShareItRewardedAd shareItRewardedAd) {
+    public void onRewardedAdClicked(SanRewardedAd SanRewardedAd) {
     	//  Called when a rewarded video is clicked.
         Log.d(TAG, "onRewardedAdClicked");
     }
 
     @Override
-    public void onRewardedVideoClosed(ShareItRewardedAd shareItRewardedAd) {
+    public void onRewardedVideoClosed(SanRewardedAd SanRewardedAd) {
    	// Called when a rewarded video is closed.
         Log.d(TAG, "onRewardedVideoClosed");
     }
 
     @Override
-    public void onRewardedVideoCompleted(ShareItRewardedAd shareItRewardedAd) {
+    public void onRewardedVideoCompleted(SanRewardedAd SanRewardedAd) {
     	// Called when a rewarded video is completed and the user should be rewarded.
         Log.d(TAG, "onRewardedVideoCompleted");
     }
@@ -544,8 +534,8 @@ rewardedAd.load();//Request ad
 If `isReady()` returns true, display the interstitial by calling the `show()` method
 
 ```
-if (shareItRewardedAd.isReady()) {
-    shareItRewardedAd.show();
+if (SanRewardedAd.isReady()) {
+    SanRewardedAd.show();
 }
 ```
 
@@ -554,7 +544,7 @@ if (shareItRewardedAd.isReady()) {
 When the Rewarded Ad dismissed use the `destroy()`
 
 ```
-shareItRewardedAd.destory();
+SanRewardedAd.destory();
 ```
 
 ### Ad Preload
@@ -562,5 +552,19 @@ shareItRewardedAd.destory();
 Using the `preload()` to preload in advance reduces the load time at presentation time
 
 ```
-shareItRewardedAd.preload();
+SanRewardedAd.preload();
 ```
+
+##Mediation
+- [AdColony]()
+- [Admob]()
+- [AppLovin]()
+- [FacebookAudienceNetwork]()
+- [Fyber]()
+- [IronSource]()
+- [InMobi]()
+- [Mopub]()
+- [Mintegral]()
+- [TopOn]()
+- [UnityAds]()
+- [Vungle]()

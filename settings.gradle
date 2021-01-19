@@ -1,2 +1,2 @@
-rootProject.name = "ShareitOpenSDKDemo"
+rootProject.name = "SanSdkSample"
 include ':app'
