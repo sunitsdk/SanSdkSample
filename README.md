@@ -356,7 +356,7 @@ The Sample:
 
 #### Step 3：Show Native Ads
 
-- Get SanNativeAd to show
+- Get BaseNativeAd to show
 
 ```
   BaseNativeAd nativeAd;//The BaseNativeAd is obtained from onNativeLoaded()
@@ -391,7 +391,7 @@ The Sample:
 Using the `preload()` to preload in advance reduces the load time at presentation time
 
 ```
-SanNative.preload();
+nativeAd.preload();
 ```
 
 
@@ -450,8 +450,8 @@ interstitial.load();//Request Ad
 If `isReady()` returns true, display the interstitial by calling the `show()` method
 
 ```
-if(SanInterstitial.isReady()){
-    SanInterstitial.show();
+if(interstitial.isReady()){
+    interstitial.show();
 }
 ```
 
@@ -460,7 +460,7 @@ if(SanInterstitial.isReady()){
 When the interstitial Ad dismissed use the `destroy()`
 
 ```
-SanInterstitial.destory();
+interstitial.destory();
 ```
 
 ### Ad Preload
@@ -534,8 +534,8 @@ rewardedAd.load();//Request ad
 If `isReady()` returns true, display the interstitial by calling the `show()` method
 
 ```
-if (SanRewardedAd.isReady()) {
-    SanRewardedAd.show();
+if (rewardedAd.isReady()) {
+    rewardedAd.show();
 }
 ```
 
@@ -544,7 +544,7 @@ if (SanRewardedAd.isReady()) {
 When the Rewarded Ad dismissed use the `destroy()`
 
 ```
-SanRewardedAd.destory();
+rewardedAd.destory();
 ```
 
 ### Ad Preload
@@ -552,10 +552,10 @@ SanRewardedAd.destory();
 Using the `preload()` to preload in advance reduces the load time at presentation time
 
 ```
-SanRewardedAd.preload();
+rewardedAd.preload();
 ```
 
-##Mediation
+## Mediation
 - [AdColony]()
 - [Admob]()
 - [AppLovin]()
