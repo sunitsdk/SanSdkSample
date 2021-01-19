@@ -15,11 +15,10 @@ AdColony currently supports the following ad formats.
 | Interstitial   | Interstitial        |
 | Rewarded Video | Rewarded Video      |
 
-#### Add the San Mediation SDK
+#### Step 1.Add the San Mediation SDK
 
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
-```
 ​```
 repositories {
     // ... other project repositories
@@ -32,6 +31,19 @@ dependencies {
     implementation "com.sunit.mediation:adcolony:4.1.0.8"// San mediation sdk
 }
 ​```
+
+#### Step 2.Update Your Android Manifest
+Add the admob key to meta-data in <application>
+```
+<application
+        ...>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="your admob key" />
+
+    </application>
+
 ```
 
 ### Admob
@@ -54,7 +66,6 @@ Admob currently supports the following ad formats.
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
 ```
-​```
 repositories {
     // ... other project repositories
     maven {url "https://dl.bintray.com/sunitsdk/mediation"}// San mediation sdk
@@ -65,7 +76,6 @@ dependencies {
     // ... other project dependencies
     implementation "com.sunit.mediation:admob:19.5.0.8"// San mediation sdk
 }
-​```
 ```
 
 
@@ -83,11 +93,10 @@ AppLovin currently supports the following ad formats.
 | Interstitial   | Interstitial        |
 | Rewarded Video | Rewarded Video      |
 
-#### Add the San Mediation SDK
+#### Step 1.Add the San Mediation SDK
 
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
-```
 ​```
 repositories {
     // ... other project repositories
@@ -100,7 +109,19 @@ dependencies {
     implementation "com.sunit.mediation:applovin:9.12.8.8"// San mediation sdk
 }
 ​```
+#### Step 2.Update Your Android Manifest
+Add the admob key to meta-data in <application>
 ```
+<application
+        ...>
+
+        <meta-data android:name="applovin.sdk.key"
+                    android:value="your applovin key"/>
+
+    </application>
+
+```
+
 
 ### FacebookAudienceNetwork
 
@@ -121,7 +142,6 @@ Facebook currently supports the following ad formats.
 
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
-```
 ​```
 repositories {
     // ... other project repositories
@@ -134,8 +154,6 @@ dependencies {
     implementation "com.sunit.mediation:facebook:6.2.0.8"// San mediation sdk
 }
 ​```
-```
-
 
 
 ### Fyber
@@ -156,7 +174,6 @@ Fyber currently supports the following ad formats.
 
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
-```
 ​```
 repositories {
     // ... other project repositories
@@ -169,7 +186,6 @@ dependencies {
     implementation "com.sunit.mediation:fyber:7.7.4.8"// San mediation sdk
 }
 ​```
-```
 
 
 ### IronSource
@@ -190,7 +206,6 @@ IronSource currently supports the following ad formats.
 
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
-```
 ​```
 repositories {
     // ... other project repositories
@@ -203,7 +218,6 @@ dependencies {
     implementation "com.sunit.mediation:ironsource:6.10.2.8"// San mediation sdk
 }
 ​```
-```
 
 
 ### InMobi
@@ -225,7 +239,6 @@ InMobi currently supports the following ad formats.
 
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
-```
 ​```
 repositories {
     // ... other project repositories
@@ -238,7 +251,6 @@ dependencies {
     implementation "com.sunit.mediation:inmobi:9.0.9.8"// San mediation sdk
 }
 ​```
-```
 
 
 ### Mopub
@@ -261,7 +273,6 @@ Mopub currently supports the following ad formats.
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
 ```
-​```
 repositories {
     // ... other project repositories
     maven {url "https://dl.bintray.com/sunitsdk/mediation"}// San mediation sdk
@@ -272,7 +283,6 @@ dependencies {
     // ... other project dependencies
     implementation "com.sunit.mediation:mopub:5.14.0.8"// San mediation sdk
 }
-​```
 ```
 
 
@@ -296,7 +306,6 @@ Mintegral currently supports the following ad formats.
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
 ```
-​```
 repositories {
     // ... other project repositories
     maven {url "https://dl.bintray.com/sunitsdk/mediation"}// San mediation sdk
@@ -307,7 +316,6 @@ dependencies {
     // ... other project dependencies
     implementation "com.sunit.mediation:mintegral:14.6.01.8"// San mediation sdk
 }
-​```
 ```
 
 
@@ -330,7 +338,6 @@ TopOn currently supports the following ad formats.
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
 ```
-​```
 repositories {
     // ... other project repositories
     maven {url "https://dl.bintray.com/sunitsdk/mediation"}// San mediation sdk
@@ -341,7 +348,6 @@ dependencies {
     // ... other project dependencies
     implementation "com.sunit.mediation:topon:5.7.1.8"// San mediation sdk
 }
-​```
 ```
 
 ### UnityAds
@@ -363,7 +369,6 @@ UnityAds currently supports the following ad formats.
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
 ```
-​```
 repositories {
     // ... other project repositories
     maven {url "https://dl.bintray.com/sunitsdk/mediation"}// San mediation sdk
@@ -374,7 +379,6 @@ dependencies {
     // ... other project dependencies
     implementation "com.sunit.mediation:unityads:3.4.2.8"// San mediation sdk
 }
-​```
 ```
 
 
@@ -397,7 +401,6 @@ Vungle currently supports the following ad formats.
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
 ```
-​```
 repositories {
     // ... other project repositories
     maven {url "https://dl.bintray.com/sunitsdk/mediation"}// San mediation sdk
@@ -408,7 +411,6 @@ dependencies {
     // ... other project dependencies
     implementation "com.sunit.mediation:vungle:6.7.1.8"// San mediation sdk
 }
-​```
 ```
 
 
