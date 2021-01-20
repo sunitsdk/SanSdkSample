@@ -20,15 +20,9 @@ android {
     }
 
     repositories {
-        maven {
-            name "SUnit-Core's maven repo"
-            url "https://dl.bintray.com/sunitsdk/SUnit"
-        }
+        maven {url "https://dl.bintray.com/sunitsdk/SUnit"}//For san
 
-        maven {
-            name "SUnit-mediation's maven repo"
-            url "https://dl.bintray.com/sunitsdk/mediation"
-        }
+        maven {url "https://dl.bintray.com/sunitsdk/mediation"}//For san mediation
     }
 
     android {
@@ -58,11 +52,11 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
 
     //San open sdk
-    api "com.sunit:san-sdk:3.0.1.4"
+    api "com.sunit:san-sdk:3.0.1.6"
 
     //Mediation adapter(optional)
-    implementation "com.sunit.mediation:admob:19.5.0.8"
-    implementation "com.sunit.mediation:facebook:6.2.0.8"
-    implementation "com.sunit.mediation:mopub:5.14.0.8"
+//    implementation "com.sunit.mediation:admob:19.5.0.8"
+//    implementation "com.sunit.mediation:facebook:6.2.0.8"
+//    implementation "com.sunit.mediation:mopub:5.14.0.8"
 
 }

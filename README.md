@@ -118,7 +118,7 @@ public class MyApplication extends MultiDexApplication {
 
 
 ## Changelog
-### 3.0.1.3 (January 19,2021)
+### 3.0.1.6 (January 19,2021)
 - Rename package and sdk name.
 
 
