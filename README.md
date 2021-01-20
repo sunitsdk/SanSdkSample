@@ -98,6 +98,7 @@ Once you’ve completed the above steps, you can start displaying ads in your ap
 - [Rewarded Video](https://github.com/sunitsdk/SanSdkSample#rewarded-video-ads)
 
 
+
 ## Initialize
 
 After you have integrated the San open SDK and created an ad placement, you must call `SanAd.init()` **before you send any ad requests**. Initialization is **required** for a number of new functionalities:
@@ -114,17 +115,6 @@ public class MyApplication extends MultiDexApplication {
     }
 }
 ```
-
-
-
-## Changelog
-### 3.0.1.6 (January 19,2021)
-- Rename package and sdk name.
-
-
-### 3.0.0.0 (January 8,2021)
-
-- OpenSDK initial release
 
 
 
@@ -556,6 +546,8 @@ rewardedAd.preload();
 ```
 
 ## Mediation
+
+### AdNetworks
 - [AdColony](https://github.com/sunitsdk/SanSdkSample/blob/master/Mediation.md#adcolony)
 - [Admob](https://github.com/sunitsdk/SanSdkSample/blob/master/Mediation.md#admob)
 - [AppLovin](https://github.com/sunitsdk/SanSdkSample/blob/master/Mediation.md#applovin)
@@ -568,4 +560,10 @@ rewardedAd.preload();
 - [TopOn](https://github.com/sunitsdk/SanSdkSample/blob/master/Mediation.md#topon)
 - [UnityAds](https://github.com/sunitsdk/SanSdkSample/blob/master/Mediation.md#unityads)
 - [Vungle](https://github.com/sunitsdk/SanSdkSample/blob/master/Mediation.md#vungle)
-### [Native Ads Use the SanNativeAdRenderer](https://github.com/sunitsdk/SanSdkSample/blob/master/Mediation.md#native-ads-use-the-sannativeadrenderer)
+
+### Native Ads For Show
+[ Use the SanNativeAdRenderer](https://github.com/sunitsdk/SanSdkSample/blob/master/Mediation.md#native-ads-use-the-sannativeadrenderer)
+
+## ChangeLog
+
+[ChangeLog]()
