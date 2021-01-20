@@ -92,10 +92,10 @@ Oct 01, 2020 - Android 9.0 (API 28) blocks cleartext (non-HTTPS) traffic by defa
 
 Once you’ve completed the above steps, you can start displaying ads in your application by configuring the PlacementIds as shown in the link below for your ad format:
 
-- [Banner](https://github.com/sunitsdk/ShareitOpenSDKDemo#banner-ads)
-- [Native](https://github.com/sunitsdk/ShareitOpenSDKDemo#native-ads)
-- [Interstitial](https://github.com/sunitsdk/ShareitOpenSDKDemo#interstitial-ads)
-- [Rewarded Video](https://github.com/sunitsdk/ShareitOpenSDKDemo#rewarded-video-ads)
+- [Banner](https://github.com/sunitsdk/SanSdkSample#banner-ads)
+- [Native](https://github.com/sunitsdk/SanSdkSample#native-ads)
+- [Interstitial](https://github.com/sunitsdk/SanSdkSample#interstitial-ads)
+- [Rewarded Video](https://github.com/sunitsdk/SanSdkSample#rewarded-video-ads)
 
 
 ## Initialize
@@ -137,7 +137,7 @@ Banner ads usually appear at the top or bottom of your app’s screen. Adding on
 Before integrating banner ads in your app:
 
 1. create an account, create an **App**, and create an **PlacementId** using the format ‘Banner’.
-2. Follow our steps to [Integrate the San SDK for Android](https://github.com/sunitsdk/ShareitOpenSDKDemo#integrate-the-san-sdk-for-android) into your project.
+2. Follow our steps to [Integrate the San SDK for Android](https://github.com/sunitsdk/SanSdkSample#integrate-the-san-sdk-for-android) into your project.
 3. Integrated the San Ad open SDK
 
 ### Loading Banner Ads in Your App
@@ -225,7 +225,7 @@ Native ads let you monetize your app in a way that’s consistent with its exist
 Before integrating native ads into your app:
 
 1. create an account, create an **App**, and create an **placementId** using the format ‘Native’.
-2. Follow our steps to [Integrate the San SDK for Android](https://github.com/sunitsdk/ShareitOpenSDKDemo#integrate-the-san-sdk-for-android) into your project.
+2. Follow our steps to [Integrate the San SDK for Android](https://github.com/sunitsdk/SanSdkSample#integrate-the-san-sdk-for-android) into your project.
 3. Integrated the San Ad open SDK
 
 ####  Step 1. Request the Native Ad
@@ -403,7 +403,7 @@ Interstitial ads provide full-screen experiences, commonly incorporating rich me
 ###  Prerequisites
 
 1. create an account, create an **App**, and create an **Ad placement** using the format ‘Interstitial’.
-2. Follow our steps to [Integrate the San SDK for Android](https://github.com/sunitsdk/ShareitOpenSDKDemo#integrate-the-san-sdk-for-android) into your project.
+2. Follow our steps to [Integrate the San SDK for Android](https://github.com/sunitsdk/SanSdkSample#integrate-the-san-sdk-for-android) into your project.
 3. Integrated the San Ad open SDK
 
 ### Load Interstitial Ads in Your App
@@ -480,7 +480,7 @@ Rewarded video ads are a great way to keep users engaged in your app while earni
 ###  Prerequisites
 
 1. create an account, create an **App**, and create an **Ad placement** using the format ‘Rewarded Video’.
-2. Follow our steps to [Integrate the San SDK for Android](https://github.com/sunitsdk/ShareitOpenSDKDemo#integrate-the-san-sdk-for-android) into your project.
+2. Follow our steps to [Integrate the San SDK for Android](https://github.com/sunitsdk/SanSdkSample#integrate-the-san-sdk-for-android) into your project.
 3. Integrated the San Ad open SDK
 
 ### Basic Integration
@@ -556,16 +556,16 @@ rewardedAd.preload();
 ```
 
 ## Mediation
-- [AdColony](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/Mediation.md#adcolony)
-- [Admob](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/Mediation.md#admob)
-- [AppLovin](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/Mediation.md#applovin)
-- [FacebookAudienceNetwork](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/Mediation.md#facebookaudiencenetwork)
-- [Fyber](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/Mediation.md#fyber)
-- [IronSource](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/Mediation.md#ironsource)
-- [InMobi](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/Mediation.md#inmobi)
-- [Mopub](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/Mediation.md#mopub)
-- [Mintegral](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/Mediation.md#mintegral)
-- [TopOn](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/Mediation.md#topon)
-- [UnityAds](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/Mediation.md#unityads)
-- [Vungle](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/Mediation.md#vungle)
-### [Native Ads Use the SanNativeAdRenderer](https://github.com/sunitsdk/ShareitOpenSDKDemo/blob/master/Mediation.md#native-ads-use-the-sannativeadrenderer)
+- [AdColony](https://github.com/sunitsdk/SanSdkSample/blob/master/Mediation.md#adcolony)
+- [Admob](https://github.com/sunitsdk/SanSdkSample/blob/master/Mediation.md#admob)
+- [AppLovin](https://github.com/sunitsdk/SanSdkSample/blob/master/Mediation.md#applovin)
+- [FacebookAudienceNetwork](https://github.com/sunitsdk/SanSdkSample/blob/master/Mediation.md#facebookaudiencenetwork)
+- [Fyber](https://github.com/sunitsdk/SanSdkSample/blob/master/Mediation.md#fyber)
+- [IronSource](https://github.com/sunitsdk/SanSdkSample/blob/master/Mediation.md#ironsource)
+- [InMobi](https://github.com/sunitsdk/SanSdkSample/blob/master/Mediation.md#inmobi)
+- [Mopub](https://github.com/sunitsdk/SanSdkSample/blob/master/Mediation.md#mopub)
+- [Mintegral](https://github.com/sunitsdk/SanSdkSample/blob/master/Mediation.md#mintegral)
+- [TopOn](https://github.com/sunitsdk/SanSdkSample/blob/master/Mediation.md#topon)
+- [UnityAds](https://github.com/sunitsdk/SanSdkSample/blob/master/Mediation.md#unityads)
+- [Vungle](https://github.com/sunitsdk/SanSdkSample/blob/master/Mediation.md#vungle)
+### [Native Ads Use the SanNativeAdRenderer](https://github.com/sunitsdk/SanSdkSample/blob/master/Mediation.md#native-ads-use-the-sannativeadrenderer)
