@@ -566,4 +566,4 @@ rewardedAd.preload();
 
 ## ChangeLog
 
-[ChangeLog]()
+[ChangeLog](https://github.com/sunitsdk/SanSdkSample/blob/master/ChangeLog.md)
