@@ -34,15 +34,14 @@ dependencies {
 ```
 
 #### Step 2.Update Your Android Manifest
-Add the admob key to meta-data in <application>
+Add the AdColony key to meta-data in <application>
 ```
 <application
         ...>
 
         <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="your admob key" />
-
+            android:name="com.sunit.APP_KEY.AdColony"
+            android:value="your adcolony key" />
     </application>
 
 ```
@@ -62,7 +61,7 @@ Admob currently supports the following ad formats.
 | Rewarded Video | Rewarded Video   |
 | Native         | Native           |
 
-#### Add the San Mediation SDK
+#### Step 1.Add the San Mediation SDK
 
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
@@ -77,6 +76,19 @@ dependencies {
     // ... other project dependencies
     implementation "com.sunit.mediation:admob:19.5.0.8"// San mediation sdk
 }
+```
+
+#### Step 2.Update Your Android Manifest
+Add the admob key to meta-data in <application>
+```
+<application
+        ...>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="your admob key" />
+    </application>
+
 ```
 
 
@@ -171,7 +183,7 @@ Fyber currently supports the following ad formats.
 | Interstitial   | Interstitial        |
 | Rewarded Video | Rewarded Video      |
 
-#### Add the San Mediation SDK
+#### Step 1.Add the San Mediation SDK
 
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
@@ -190,6 +202,20 @@ dependencies {
 ```
 
 
+#### Step 2.Update Your Android Manifest
+Add the Fyber key to meta-data in <application>
+```
+<application
+        ...>
+
+        <meta-data
+            android:name="com.sunit.APP_KEY.Fyber"
+            android:value="your Fyber key" />
+    </application>
+
+```
+
+
 ### IronSource
 
 If you plan to use the San SDK to load and display ads from IronSource via mediation, use this article for integration instructions and information unique to the ad network. 
@@ -204,7 +230,7 @@ IronSource currently supports the following ad formats.
 | Interstitial   | Interstitial        |
 | Rewarded Video | Rewarded Video      |
 
-#### Add the San Mediation SDK
+#### Step 1.Add the San Mediation SDK
 
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
@@ -220,6 +246,19 @@ dependencies {
     // ... other project dependencies
     implementation "com.sunit.mediation:ironsource:6.10.2.8"// San mediation sdk
 }
+```
+
+#### Step 2.Update Your Android Manifest
+Add the IronSource key to meta-data in <application>
+```
+<application
+        ...>
+
+        <meta-data
+            android:name="com.sunit.APP_KEY.IronSource"
+            android:value="your IronSource key" />
+    </application>
+
 ```
 
 
@@ -238,7 +277,7 @@ InMobi currently supports the following ad formats.
 | Rewarded Video | Rewarded Video      |
 | Native | Native |
 
-#### Add the San Mediation SDK
+#### Step 1.Add the San Mediation SDK
 
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
@@ -253,6 +292,20 @@ dependencies {
     // ... other project dependencies
     implementation "com.sunit.mediation:inmobi:9.0.9.8"// San mediation sdk
 }
+```
+
+
+#### Step 2.Update Your Android Manifest
+Add the InMobi key to meta-data in <application>
+```
+<application
+        ...>
+
+        <meta-data
+            android:name="com.sunit.APP_KEY.InMobi"
+            android:value="your InMobi key" />
+    </application>
+
 ```
 
 
@@ -271,7 +324,7 @@ Mopub currently supports the following ad formats.
 | Rewarded Video | Rewarded Video      |
 | Native | Native |
 
-#### Add the San Mediation SDK
+#### Step 1.Add the San Mediation SDK
 
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
@@ -288,6 +341,18 @@ dependencies {
 }
 ```
 
+#### Step 2.Update Your Android Manifest
+Add the Mopub key to meta-data in <application>
+```
+<application
+        ...>
+
+        <meta-data
+            android:name="com.sunit.APP_KEY.Mopub"
+            android:value="your Mopub key" />
+    </application>
+
+```
 
 ### Mintegral
 
@@ -304,7 +369,7 @@ Mintegral currently supports the following ad formats.
 | Rewarded Video | Rewarded Video      |
 | Native | Native |
 
-#### Add the San Mediation SDK
+#### Step 1.Add the San Mediation SDK
 
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
@@ -319,6 +384,19 @@ dependencies {
     // ... other project dependencies
     implementation "com.sunit.mediation:mintegral:14.6.01.8"// San mediation sdk
 }
+```
+
+#### Step 2.Update Your Android Manifest
+Add the Mintegral key to meta-data in <application>
+```
+<application
+        ...>
+
+        <meta-data
+            android:name="com.sunit.APP_KEY.Mintegral"
+            android:value="your Mintegral key" />
+    </application>
+
 ```
 
 
@@ -336,7 +414,7 @@ TopOn currently supports the following ad formats.
 | Interstitial   | Interstitial        |
 | Rewarded Video | Rewarded Video      |
 
-#### Add the San Mediation SDK
+#### Step 1.Add the San Mediation SDK
 
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
@@ -353,6 +431,18 @@ dependencies {
     implementation "com.sunit.mediation:topon:5.7.1.8"// San mediation sdk
 }
 ```
+#### Step 2.Update Your Android Manifest
+Add the TopOn key to meta-data in <application>
+```
+<application
+        ...>
+
+        <meta-data
+            android:name="com.sunit.APP_KEY.TopOn"
+            android:value="your TopOn key" />
+    </application>
+
+```
 
 ### UnityAds
 
@@ -368,7 +458,7 @@ UnityAds currently supports the following ad formats.
 | Interstitial   | Interstitial        |
 | Rewarded Video | Rewarded Video      |
 
-#### Add the San Mediation SDK
+#### Step 1.Add the San Mediation SDK
 
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
@@ -383,6 +473,19 @@ dependencies {
     // ... other project dependencies
     implementation "com.sunit.mediation:unityads:3.4.2.8"// San mediation sdk
 }
+```
+
+#### Step 2.Update Your Android Manifest
+Add the UnityAds key to meta-data in <application>
+```
+<application
+        ...>
+
+        <meta-data
+            android:name="com.sunit.APP_KEY.UnityAds"
+            android:value="your UnityAds key" />
+    </application>
+
 ```
 
 
@@ -400,7 +503,7 @@ Vungle currently supports the following ad formats.
 | Interstitial   | Interstitial        |
 | Rewarded Video | Rewarded Video      |
 
-#### Add the San Mediation SDK
+#### Step 1.Add the San Mediation SDK
 
 open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
@@ -415,6 +518,19 @@ dependencies {
     // ... other project dependencies
     implementation "com.sunit.mediation:vungle:6.7.1.8"// San mediation sdk
 }
+```
+
+#### Step 2.Update Your Android Manifest
+Add the Vungle key to meta-data in <application>
+```
+<application
+        ...>
+
+        <meta-data
+            android:name="com.sunit.APP_KEY.Vungle"
+            android:value="your Vungle key" />
+    </application>
+
 ```
 
 
