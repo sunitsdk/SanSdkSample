@@ -23,6 +23,7 @@ open your project and update the app module’s `build.gradle` to have the follo
 repositories {
     // ... other project repositories
     maven {url "https://dl.bintray.com/sunitsdk/mediation"}// San mediation sdk
+    maven {url "https://adcolony.bintray.com/AdColony"}// AdColony
 }
 //...
 
@@ -178,6 +179,7 @@ open your project and update the app module’s `build.gradle` to have the follo
 repositories {
     // ... other project repositories
     maven {url "https://dl.bintray.com/sunitsdk/mediation"}// San mediation sdk
+    maven {url "https://fyber.bintray.com/marketplace"}// Fyber
 }
 //...
 
@@ -210,6 +212,7 @@ open your project and update the app module’s `build.gradle` to have the follo
 repositories {
     // ... other project repositories
     maven {url "https://dl.bintray.com/sunitsdk/mediation"}// San mediation sdk
+    maven {url "https://dl.bintray.com/ironsource-mobile/android-sdk"}//Ironsource
 }
 //...
 
@@ -341,6 +344,7 @@ open your project and update the app module’s `build.gradle` to have the follo
 repositories {
     // ... other project repositories
     maven {url "https://dl.bintray.com/sunitsdk/mediation"}// San mediation sdk
+    maven {url "https://dl.bintray.com/anythink/maven"}// TopOn
 }
 //...
 
