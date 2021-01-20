@@ -16,19 +16,19 @@ import com.ushareit.open.R;
 
 public class InterstitialFragment extends Fragment {
     private static final String TAG = "InterstitialFragment";
-    private static final String INTERSTITIAL_UNIT_ID = "wm_Inter";
+    private static final String INTERSTITIAL_PLACEMENT_ID = "san_wmlt_itl";
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_interstitial, container, false);
         final Button button = root.findViewById(R.id.btn_interstitial_ad);
-        button.setText(String.format("Interstitial Ad: %s", INTERSTITIAL_UNIT_ID));
+        button.setText(String.format("Interstitial Ad: %s", INTERSTITIAL_PLACEMENT_ID));
         button.setOnClickListener(view -> loadAndShowInterstitialAd());
         return root;
     }
 
     private void loadAndShowInterstitialAd() {
-        SanInterstitial interstitial = new SanInterstitial(getContext(), INTERSTITIAL_UNIT_ID);
+        SanInterstitial interstitial = new SanInterstitial(getContext(), INTERSTITIAL_PLACEMENT_ID);
         interstitial.setInterstitialAdListener(new SanInterstitial.InterstitialAdListener() {
             @Override
             public void onInterstitialLoaded(final SanInterstitial shareItInterstitial) {

@@ -58,7 +58,7 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
 
     //San open sdk
-    api "com.sunit:san-sdk:3.0.1.3"
+    api "com.sunit:san-sdk:3.0.1.4"
 
     //Mediation adapter(optional)
     implementation "com.sunit.mediation:admob:19.5.0.8"

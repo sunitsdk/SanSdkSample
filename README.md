@@ -88,9 +88,9 @@ Oct 01, 2020 - Android 9.0 (API 28) blocks cleartext (non-HTTPS) traffic by defa
     </network-security-config>
    ```
 
-### Step 4. Configure Ad Units in Your App
+### Step 4. Configure Ad Placement in Your App
 
-Once you’ve completed the above steps, you can start displaying ads in your application by configuring the ad units as shown in the link below for your ad format:
+Once you’ve completed the above steps, you can start displaying ads in your application by configuring the PlacementIds as shown in the link below for your ad format:
 
 - [Banner](https://github.com/sunitsdk/ShareitOpenSDKDemo#banner-ads)
 - [Native](https://github.com/sunitsdk/ShareitOpenSDKDemo#native-ads)
@@ -100,7 +100,7 @@ Once you’ve completed the above steps, you can start displaying ads in your ap
 
 ## Initialize
 
-After you have integrated the San open SDK and created an ad unit, you must call `SanAd.init()` **before you send any ad requests**. Initialization is **required** for a number of new functionalities:
+After you have integrated the San open SDK and created an ad placement, you must call `SanAd.init()` **before you send any ad requests**. Initialization is **required** for a number of new functionalities:
 
 It is recommended to initialize in `Application onCreate()`
 
@@ -136,7 +136,7 @@ Banner ads usually appear at the top or bottom of your app’s screen. Adding on
 
 Before integrating banner ads in your app:
 
-1. create an account, create an **App**, and create an **Ad unit** using the format ‘Banner’.
+1. create an account, create an **App**, and create an **PlacementId** using the format ‘Banner’.
 2. Follow our steps to [Integrate the San SDK for Android](https://github.com/sunitsdk/ShareitOpenSDKDemo#integrate-the-san-sdk-for-android) into your project.
 3. Integrated the San Ad open SDK
 
@@ -160,13 +160,13 @@ Next, in your `Activity` or `Fragment` code, declare an instance variable for yo
 private SanBannerView banner;
 ```
 
-You should already have created an ad unit on Midas’s site and received an Ad Unit ID. You’ll use it now to identify that ad unit in your app and request ads from Midas that are relevant for your users.
+You should already have created an ad placement on Midas’s site and received an Ad Placement ID. You’ll use it now to identify that ad placementId in your app and request ads from Midas that are relevant for your users.
 
-In your Activity’s `onCreate()` or your Fragment’s `onCreateView()` method, set your `SanBannerView` Ad Unit ID, then simply call `loadAd()` to fetch and display the ad:
+In your Activity’s `onCreate()` or your Fragment’s `onCreateView()` method, set your `SanBannerView` placementId, then simply call `loadAd()` to fetch and display the ad:
 
 ```
 banner = (SanBannerView)findViewById(R.id.adview);
-banner.setAdUnitId(adUnitId);
+banner.setAdUnitId(placementId);
 banner.setAdSize(adSize);
 banner.loadAd();
 ```
@@ -224,23 +224,23 @@ Native ads let you monetize your app in a way that’s consistent with its exist
 
 Before integrating native ads into your app:
 
-1. create an account, create an **App**, and create an **Ad unit** using the format ‘Native’.
+1. create an account, create an **App**, and create an **placementId** using the format ‘Native’.
 2. Follow our steps to [Integrate the San SDK for Android](https://github.com/sunitsdk/ShareitOpenSDKDemo#integrate-the-san-sdk-for-android) into your project.
 3. Integrated the San Ad open SDK
 
 ####  Step 1. Request the Native Ad
 
 ```
-SanNative sanNative = new SanNative(getContext(), adUnitId, new SanNative.NativeNetworkListener() {
+SanNative sanNative = new SanNative(getContext(), placementId, new SanNative.NativeNetworkListener() {
     @Override
     public void onNativeLoaded(BaseNativeAd nativeAd) {
-        // Called when the ad for the given adUnitId has loaded.
+        // Called when the ad for the given placementId has loaded.
         Log.d(TAG, "onNativeLoaded");
     }
 
     @Override
     public void onNativeFailed(AdException e) {
-        // Called when a ad fails to load for the given adUnitId. 
+        // Called when a ad fails to load for the given placementId. 
         Log.d(TAG, "onNativeFailed e = " + e.getMessage() + " code = " + e.getCode());
     }
 
@@ -402,7 +402,7 @@ Interstitial ads provide full-screen experiences, commonly incorporating rich me
 
 ###  Prerequisites
 
-1. create an account, create an **App**, and create an **Ad unit** using the format ‘Interstitial’.
+1. create an account, create an **App**, and create an **Ad placement** using the format ‘Interstitial’.
 2. Follow our steps to [Integrate the San SDK for Android](https://github.com/sunitsdk/ShareitOpenSDKDemo#integrate-the-san-sdk-for-android) into your project.
 3. Integrated the San Ad open SDK
 
@@ -411,7 +411,7 @@ Interstitial ads provide full-screen experiences, commonly incorporating rich me
 #### Step 1. Create an Interstitial Ad
 
 ```
-SanInterstitial interstitial = new SanInterstitial(getContext(), INTERSTITIAL_UNIT_ID);
+SanInterstitial interstitial = new SanInterstitial(getContext(), INTERSTITIAL_PLACEMENT_ID);
 interstitial.setInterstitialAdListener(new SanInterstitial.InterstitialAdListener() {
             @Override
             public void onInterstitialLoaded(final SanInterstitial SanInterstitial) {
@@ -479,7 +479,7 @@ Rewarded video ads are a great way to keep users engaged in your app while earni
 
 ###  Prerequisites
 
-1. create an account, create an **App**, and create an **Ad unit** using the format ‘Rewarded Video’.
+1. create an account, create an **App**, and create an **Ad placement** using the format ‘Rewarded Video’.
 2. Follow our steps to [Integrate the San SDK for Android](https://github.com/sunitsdk/ShareitOpenSDKDemo#integrate-the-san-sdk-for-android) into your project.
 3. Integrated the San Ad open SDK
 
@@ -488,17 +488,17 @@ Rewarded video ads are a great way to keep users engaged in your app while earni
 ####  Step 1： Request and Cache the Rewarded Video
 
 ```
-SanRewardedAd rewardedAd = new SanRewardedAd(getContext(), REWARDED_UNIT_ID);
+SanRewardedAd rewardedAd = new SanRewardedAd(getContext(), REWARDED_PLACEMENT_ID);
 rewardedAd.setRewardedAdListener(new SanRewardedAd.RewardedVideoAdListener() {
     @Override
     public void onRewardedAdLoaded(final SanRewardedAd SanRewardedAd) {
-    	// Called when the video for the given adUnitId has loaded.
+    	// Called when the video for the given placementId has loaded.
         Log.d(TAG, "onRewardedAdLoaded");
     }
 
     @Override
     public void onRewardedAdFailed(SanRewardedAd SanRewardedAd, AdException e) {
-    	// Called when a video fails to load for the given adUnitId. 
+    	// Called when a video fails to load for the given placementId. 
         Log.d(TAG, "onRewardedAdFailed e = " + e.getMessage());
     }
 

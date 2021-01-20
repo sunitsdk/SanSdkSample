@@ -51,20 +51,18 @@ public class HomeFragment extends Fragment {
 
     private List<String> getListData() {
         List<String> listData = new ArrayList<>();
-        listData.add("NativeAd: wm_yuansheng");
-        listData.add("NativeAd: test_native");
+        listData.add("NativeAd: san_wmlt_native");
         return listData;
     }
 
     private List<String> getUnitIdData() {
         List<String> listData = new ArrayList<>();
-        listData.add("wm_yuansheng");
-        listData.add("test_native");
+        listData.add("san_wmlt_native");
         return listData;
     }
 
-    private void loadAndShowNativeAd(String adUnitId) {
-        SanNative sanNative = new SanNative(getContext(), adUnitId, new SanNative.NativeNetworkListener() {
+    private void loadAndShowNativeAd(String placementId) {
+        SanNative sanNative = new SanNative(getContext(), placementId, new SanNative.NativeNetworkListener() {
             @Override
             public void onNativeLoaded(BaseNativeAd nativeAd) {
                 rendererAdView(nativeAd);//Fro san
