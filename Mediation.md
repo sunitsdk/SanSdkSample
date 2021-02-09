@@ -74,7 +74,7 @@ repositories {
 
 dependencies {
     // ... other project dependencies
-    implementation "com.sunit.mediation:admob:19.5.0.8"// San mediation sdk
+    implementation "com.sunit.mediation:admob:19.5.0.9"// San mediation sdk
 }
 ```
 
