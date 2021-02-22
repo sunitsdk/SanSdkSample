@@ -1,6 +1,12 @@
 # Changelog
 
-### 3.0.1.6 (January 19,2021)
+
+### 3.0.1.9 (February 22,2021)
+
+- Fix image load error.
+
+
+### 3.0.1.8 (January 19,2021)
 
 - Rename package and sdk name.
 
