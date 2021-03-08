@@ -26,7 +26,7 @@ repositories {
 
 dependencies {
     // ... other project dependencies
-    api "com.sunit:san-sdk:3.0.1.+"// San open sdk
+    api "com.sunit:san-sdk:3.0.2.+"// San open sdk
 }
 ```
 
