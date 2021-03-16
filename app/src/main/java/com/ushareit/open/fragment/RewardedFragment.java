@@ -16,7 +16,7 @@ import com.ushareit.open.R;
 
 public class RewardedFragment extends Fragment {
     private static final String TAG = "RewardedFragment";
-    private static final String REWARDED_PLACEMENT_ID = "ad:san_wmlt_itl";
+    private static final String REWARDED_PLACEMENT_ID = "san_wmlt_rwd";
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {

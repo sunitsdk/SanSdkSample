@@ -29,6 +29,7 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
     private static final String TAG = "Native";
+    private static final String NATIVE_PLACEMENT_ID = "san_wmlt_native";
 
     private FrameLayout mAdContainer;
 
@@ -57,7 +58,7 @@ public class HomeFragment extends Fragment {
 
     private List<String> getUnitIdData() {
         List<String> listData = new ArrayList<>();
-        listData.add("ad:san_wmlt_native");
+        listData.add(NATIVE_PLACEMENT_ID);
         return listData;
     }
 

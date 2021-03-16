@@ -16,7 +16,7 @@ import com.ushareit.open.R;
 
 public class InterstitialFragment extends Fragment {
     private static final String TAG = "InterstitialFragment";
-    private static final String INTERSTITIAL_PLACEMENT_ID = "ad:san_wmlt_itl";
+    private static final String INTERSTITIAL_PLACEMENT_ID = "san_wmlt_itl";
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
