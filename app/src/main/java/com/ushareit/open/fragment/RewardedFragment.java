@@ -16,13 +16,13 @@ import com.ushareit.open.R;
 
 public class RewardedFragment extends Fragment {
     private static final String TAG = "RewardedFragment";
-    private static final String REWARDED_PLACEMENT_ID = "san_wmlt_itl";
+    private static final String REWARDED_PLACEMENT_ID = "ad:san_wmlt_itl";
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_rewarded, container, false);
         final Button button = root.findViewById(R.id.btn_rewarded_ad);
-        button.setText(String.format("Rewarded Ad: %s", REWARDED_PLACEMENT_ID));
+        button.setText("Load Rewarded Ad");
         button.setOnClickListener(view -> loadAndShowRewardedAd());
         return root;
     }

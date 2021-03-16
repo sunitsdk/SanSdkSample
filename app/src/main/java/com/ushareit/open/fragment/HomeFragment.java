@@ -51,13 +51,13 @@ public class HomeFragment extends Fragment {
 
     private List<String> getListData() {
         List<String> listData = new ArrayList<>();
-        listData.add("NativeAd: san_wmlt_native");
+        listData.add("Load NativeAd");
         return listData;
     }
 
     private List<String> getUnitIdData() {
         List<String> listData = new ArrayList<>();
-        listData.add("san_wmlt_native");
+        listData.add("ad:san_wmlt_native");
         return listData;
     }
 

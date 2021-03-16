@@ -16,13 +16,13 @@ import com.ushareit.open.R;
 
 public class InterstitialFragment extends Fragment {
     private static final String TAG = "InterstitialFragment";
-    private static final String INTERSTITIAL_PLACEMENT_ID = "san_wmlt_itl";
+    private static final String INTERSTITIAL_PLACEMENT_ID = "ad:san_wmlt_itl";
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_interstitial, container, false);
         final Button button = root.findViewById(R.id.btn_interstitial_ad);
-        button.setText(String.format("Interstitial Ad: %s", INTERSTITIAL_PLACEMENT_ID));
+        button.setText("Load Interstitial Ad");
         button.setOnClickListener(view -> loadAndShowInterstitialAd());
         return root;
     }

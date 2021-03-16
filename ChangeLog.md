@@ -1,7 +1,7 @@
 # Changelog
 
 
-### 3.0.2.1 (February 22,2021)
+### 3.0.2.2 (March 16,2021)
 
 - Fix image load error.
 
