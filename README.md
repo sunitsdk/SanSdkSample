@@ -17,6 +17,8 @@ Aggregate twelve mainstream online advertising platforms including AdColony, Adm
 
 The San Open SDK is available as an AAR via Bintray.To add the san-sdk dependency, open your project and update the app module’s `build.gradle` to have the following `repositories` and `dependencies`:
 
+> The [LATEST_VERSION](https://github.com/sunitsdk/SanSdkSample/blob/master/ChangeLog.md)
+
 ```
 repositories {
     // ... other project repositories
@@ -26,7 +28,7 @@ repositories {
 
 dependencies {
     // ... other project dependencies
-    api "com.sunit:san-sdk:3.0.2.+"// San open sdk
+    api "com.sunit:san-sdk:LATEST_VERSION"// San open sdk
 }
 ```
 
