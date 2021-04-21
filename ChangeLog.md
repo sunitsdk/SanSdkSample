@@ -1,6 +1,11 @@
 # Changelog
 
 
+### 3.0.3.0 (April 21,2021)
+
+- Opt performance of video ad
+- Opt UI for Interstitial Ad
+
 ### 3.0.2.2 (March 16,2021)
 
 - Fix image load error.
