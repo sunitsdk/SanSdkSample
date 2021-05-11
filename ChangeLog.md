@@ -3,7 +3,7 @@
 ### 3.1.0.2 (May 11,2021)
 - Configure custom Maven repository
 
-#### 1. Download the [Ads SDK file](https://github.com/sunitsdk/SanSdkSample/tree/master/sunit-sdk/com/sunit). Create a sunit_sdk folder in your project's top-level directory, and place the entire contents of the zip in that folder. Your directory structure should look like <project_root_dir>/sunit_sdk/com/sunit/....
+#### 1. Download the [sunit-sdk.zip](https://github.com/sunitsdk/SanSdkSample/files/6456503/sunit-sdk.zip). Create a sunit_sdk folder in your project's top-level directory, and place the entire contents of the zip in that folder. Your directory structure should look like <project_root_dir>/sunit_sdk/com/sunit/...., can refrence [SanSdkSample](https://github.com/sunitsdk/SanSdkSample/tree/master/sunit-sdk)
 
 #### 2. Open your app's project level build.gradle file.
 ```
