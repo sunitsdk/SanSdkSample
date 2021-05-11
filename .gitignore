@@ -16,7 +16,5 @@
 .externalNativeBuild
 .cxx
 
-LotusEmpty/
-ShareAd/
-/LotusEmpty
-/ShareAd
+build/
+.gradle/*
