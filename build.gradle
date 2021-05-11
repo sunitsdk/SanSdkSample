@@ -12,6 +12,10 @@ buildscript {
 allprojects {
     repositories {
         google()
+        maven {
+            name "local maven for sunit-sdk"
+            url "${rootDir.path}/sunit-sdk"
+        }
         jcenter()
     }
 }
