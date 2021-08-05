@@ -58,6 +58,15 @@ Update your `AndroidManifest.xml` in order to complete the SDK integration. Add 
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 ```
+2. Add the AppID in meta-data in the example below
+```
+<manifest>
+    <application>
+         <meta-data android:name="com.ushareit.ads.KEY_APP_ID"
+             android:value="YOUR_APP_ID"/>
+    </application>
+</manifest> 
+```
 
 ### Step 3：Add network_security_config.xml
 
