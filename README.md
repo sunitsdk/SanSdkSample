@@ -62,7 +62,7 @@ Update your `AndroidManifest.xml` in order to complete the SDK integration. Add 
 ```
 <manifest>
     <application>
-         <meta-data android:name="com.ushareit.ads.KEY_APP_ID"
+         <meta-data android:name="com.sunit.APP_KEY.AdsHonor"
              android:value="YOUR_APP_ID"/>
     </application>
 </manifest> 
